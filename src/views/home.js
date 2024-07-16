@@ -113,7 +113,7 @@ title.innerHTML = "Home"
   };
   renderItems;
   //obtener TODOS los botones, barras, selectores, etc//
-const cards = el.getElementsByClassName("philosophersCard")
+const cards = el.querySelectorAll(".philosophersCard")
 const searchName = el.querySelector("#philosopherName")
 const searchButton =el.querySelector("#search")
 const branchSelector = el.querySelector('[data-testid="select-filter"]');
@@ -136,9 +136,12 @@ cardsContainer.appendChild(ulElement);
 //se declara la función filtered data que nos servirá para todas las demás funciones, esto fue una recomendación de las coaches//
 let filteredData = data;
 //función para cada una de las cards//
-// cards.addEventListener("click", ()=>{
-//   navigateTo("/individualChat")
-// })
+cards.forEach(function(card){
+card.addEventListener("click", ()=>{
+  const cardID = el.getAttribute("data-id")
+  navigateTo("/individualChat", {id: `${cardID}`})
+})
+})
 //boton para ir a la vista de chatGrupal
 groupChatBttn.addEventListener("click", () => {
   navigateTo("/chatGrupal");
