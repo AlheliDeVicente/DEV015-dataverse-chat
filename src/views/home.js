@@ -1,78 +1,15 @@
 import { navigateTo } from "../router.js";
 import {data} from "../data/dataset.js";
 import { filterData, sortData, philosophersBeforeXIXStats, womenPhilosophersStats, analyticPhilosopherStats} from "../lib/dataFunctions.js";
+import { header } from "../components/header.js";
+import { main } from "../components/selects.js";
+import { footer } from "../components/footer.js";
 export const HOME = (props) => {
   const el = document.createElement("div");
-  el.innerHTML = `
-    <header>
-      <div id = "logo">
-      <img src="assets/logo.png" alt="logo" id="logo"/>
-      </div>
-      <h1 id="title">σοφία αιώνια</h1>
-      <button id="groupChat"> Chat Grupal </button>
-      <button id="APIKey"> API Key </button>
-    </header>
-    <main>
-      <h2>Explora y encuentra a tu filósofo preferido</h2>
-      <input type="checkbox" id="btn-menu">
-      <div class="search-section">
-        <input type="text" class="nombreFilosofo" id="philosopherName" placeholder="search"/> 
-        <button id="search">&#128269;</button>
-        <button data-testid="button-clear">Limpiar</button>
-        <label for="btn-menu" id="btn-label">filtros</label>
-      </div>
-      <div class="side-menu">
-        <label id="close-btn" for="btn-menu">&times;</label>
-        <aside class="filters">
-        <label for="select-filter">Rama</label>
-        <select id= "select-filter" data-testid="select-filter" name="branch">
-          <option value="">Selecciona una rama</option>
-          <option value="Ética">Ética</option>
-          <option value="Teoría de género">Teoría de Género</option>
-          <option value="Epistemología">Epistemología</option>
-          <option value="Metafísica">Metafísica</option>
-          <option value="Lógica">Lógica</option>
-          <option value="Filosofía política">F. Política</option>
-          <option value="Teología">Teología</option>
-        </select>
-        <label for="selectfilter1">Corriente</label>
-        <select id= "selectfilter1" data-testid="select-filter1" name="type">
-          <option value="">Selecciona una corriente</option>
-          <option value="Empirismo">Empirismo</option>
-          <option value="Idealismo alemán">Idealismo alemán</option>
-          <option value="Racionalismo">Racionalismo</option>
-          <option value="Existencialismo">Existencialismo</option>
-          <option value="Idealismo">Idealismo</option>
-          <option value="Escolástica">Escolástica</option>
-        </select>
-        <label for="select-filter2">Tradición</label>
-        <select id="select-filter2" data-testid="select-filter2" name="classification">
-          <option value="">Selecciona una tradición</option>
-          <option value="Filosofía analítica">Analítica</option>
-          <option value="Filosofía continental">Continental</option>
-        </select>
-      <label for="sort-order">Ordenar</label>
-        <select id = "sort-order" data-testid="select-sort" name = "century">
-          <option value = "asc">Más antiguo</option>
-          <option value ="desc">Más reciente</option>
-        </select>
-      </aside> 
-    </div>
-      <section id="cards-container"></section>
-      <button data-testid="show-stats" id="statsButton">Datos de interés</button>
-      <section id="stats">
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-      <table class="columns">
-        <tr>
-          <td><div id="gender_chart_div"></div></td>
-          <td><div id="class_chart_div"></div></td>
-        </tr>
-      </table>
-    </section>
-    </main>
-  `; 
-  const title = document.querySelector("#pageTitle") 
-title.innerHTML = "Home"
+  el.innerHTML =  `<header> ${header} </header>
+  <main> ${main} </main>
+  <footer> ${footer} </footer>` 
+
   const renderItems = (data) => {
     //crear ul en donde se pondrán las li//
     const ul = document.createElement("ul");
@@ -112,8 +49,9 @@ title.innerHTML = "Home"
     return ul;
   };
   renderItems;
+
   //obtener TODOS los botones, barras, selectores, etc//
-const cards = el.querySelectorAll(".philosophersCard")
+const title = document.querySelector("#pageTitle") 
 const searchName = el.querySelector("#philosopherName")
 const searchButton =el.querySelector("#search")
 const branchSelector = el.querySelector('[data-testid="select-filter"]');
@@ -127,21 +65,29 @@ const cardsContainer = el.querySelector("#cards-container");
 const groupChatBttn = el.querySelector("#groupChat");
 const apiKeyButton = el.querySelector("#APIKey");
 const logo = el.querySelector("#logo")
-
+//cambiar el titulo de la pestaña//
+title.innerHTML = "Home"
+//funcion apra cada tarjeta//
+const addCardListeners = () => {
+  const cards = el.querySelectorAll(".philosophersCard");
+  cards.forEach(card => {
+    card.addEventListener("click", () => {
+      const cardID = card.getAttribute('data-id')
+      console.log(`Card with id ${cardID} clicked`);
+      navigateTo("/individualChat", `{id: ${cardID}}`);
+    });
+  });
+};
 
 // se obtiene renderItems//
 const ulElement = renderItems(data);
 // se obtiene un elemento del DOM en donde se ponen los ul de renderItems//
 cardsContainer.appendChild(ulElement);
+addCardListeners()
 //se declara la función filtered data que nos servirá para todas las demás funciones, esto fue una recomendación de las coaches//
 let filteredData = data;
 //función para cada una de las cards//
-cards.forEach(function(card){
-card.addEventListener("click", ()=>{
-  const cardID = el.getAttribute("data-id")
-  navigateTo("/individualChat", {id: `${cardID}`})
-})
-})
+
 //boton para ir a la vista de chatGrupal
 groupChatBttn.addEventListener("click", () => {
   navigateTo("/chatGrupal");
