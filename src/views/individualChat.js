@@ -1,4 +1,3 @@
-import { data } from "../data/dataset.js";
 
 export const individualChat = (props) => {
   const el = document.createElement("div");
