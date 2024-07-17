@@ -1,5 +1,10 @@
+import { footer } from "../components/footer.js";
+import { header } from "../components/header.js";
+
 export const individualChat = (props) => {
-  const el = document.createElement("div");
-  el.innerHTML = "this is the indiviual chat page"
-  return el;
+  const viewEl = document.createElement('div');
+  const headerElement = header()
+  const footerElement = footer()
+  viewEl.appendChild(headerElement)
+  viewEl.appendChild(footerElement)
 };
