@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 //Handle URL Changes
 window.addEventListener("popstate", () => {
-  onURLChange.apply(window.location);
+  onURLChange(window.location);
 });
 // TODO:
 // 1.- Definir rutas en router.

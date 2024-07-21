@@ -49,8 +49,7 @@ export const renderItems = (data) => {
     cards.forEach((card) => {
       card.addEventListener("click", () => {
         const cardID = card.getAttribute("data-id");
-        console.log(`Card with id ${cardID} clicked`);
-        // navigateTo("/individualChat", `{id: ${cardID}}`);
+        navigateTo("/individualChat", {id : cardID});
       });
     });
   };

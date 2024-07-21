@@ -34,18 +34,20 @@ const renderView = (pathname, props = {}) => {
 };
 
 export const navigateTo = (pathname, props = {}) => {
+  const params = new URLSearchParams(props)
+  const URL = `${pathname}?${params.toString()}`
   //update window history with pushState
-  window.history.pushState({}, "", pathname); 
-  //render th view with the pathname and props
+  window.history.pushState({}, "", URL); 
+  //render the view with the pathname and props
   renderView(pathname, props);
 
 };
 
 export const onURLChange = (location) => {
   // parse the location for the path name
-  const pathname = window.location.pathname;
+  const pathname = location.pathname;
   //parse the location for the search params
-  const params = window.location.search;
+  const params = location.search;
   //convert the search params to an object with queryToObject
   const objectParams = queryStringToObject(params);
   //render the view with the pathname and object

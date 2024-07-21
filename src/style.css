@@ -141,6 +141,7 @@ select {
   border: solid #A68C76 5px;
   width: 45%;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .image-container {
