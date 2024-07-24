@@ -3,7 +3,8 @@ let rootEl;
 
 export const setRootEl = (el) => {
   //assign rootEL
-  rootEl = el; 
+  rootEl = el;
+  return rootEl 
 };
 
 export const setRoutes = (routes) => {
@@ -11,9 +12,10 @@ export const setRoutes = (routes) => {
   //optional Throw errors if routes doesn't define an /error route
   //assign ROUTES
   ROUTES = routes;
+  return ROUTES
 };
 
-const queryStringToObject = (queryString) => {
+export const queryStringToObject = (queryString) => {
   //convert query string to URLSearchParams
   const params = new URLSearchParams(queryString);
   //conver URL params to an object
@@ -22,7 +24,7 @@ const queryStringToObject = (queryString) => {
   return objectParams;
 };
 
-const renderView = (pathname, props = {}) => {
+export const renderView = (pathname, props = {}) => {
   //clear the root element
   rootEl.innerHTML = "";
   //find the correct view in ROUTES for the pathname and in case not found render the error view
@@ -30,7 +32,7 @@ const renderView = (pathname, props = {}) => {
   //render the correct view passing the value of props
   const component = view(props);
   //add the view element to the DOM root element
-  rootEl.appendChild(component);
+  return rootEl.appendChild(component);
 };
 
 export const navigateTo = (pathname, props = {}) => {
@@ -39,8 +41,7 @@ export const navigateTo = (pathname, props = {}) => {
   //update window history with pushState
   window.history.pushState({}, "", URL); 
   //render the view with the pathname and props
-  renderView(pathname, props);
-
+  return renderView(pathname, props);
 };
 
 export const onURLChange = (location) => {
@@ -51,6 +52,6 @@ export const onURLChange = (location) => {
   //convert the search params to an object with queryToObject
   const objectParams = queryStringToObject(params);
   //render the view with the pathname and object
-  renderView(pathname, objectParams);
+  return renderView(pathname, objectParams);
 };
 

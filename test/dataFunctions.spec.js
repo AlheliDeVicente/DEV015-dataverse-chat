@@ -1,4 +1,4 @@
-import {filterData, sortData, womenPhilosophersStats, philosophersBeforeXIXStats, analyticPhilosopherStats} from "../src/dataFunctions.js";
+import {filterData, sortData, womenPhilosophersStats, philosophersBeforeXIXStats, analyticPhilosopherStats} from "../src/lib/dataFunctions.js";
 import { data as fakeData } from "./data.js";
 describe('filterData function', () => {
   it('should return the quantity of philosophersByClassification', () => {

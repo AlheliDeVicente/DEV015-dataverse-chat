@@ -1,4 +1,4 @@
-import { navigateTo, onURLChange, setRootEl, setRoutes } from "./router.js";
+import {onURLChange, setRootEl, setRoutes } from "./router.js";
 import { groupChat } from "./views/groupChat.js";
 import { individualChat } from "./views/individualChat.js";
 import { HOME } from './views/home.js';
@@ -6,7 +6,7 @@ import { APIKEY } from "./views/apiKey.js";
 import { ERROR } from "./views/error.js";
 //Ejemplo de definición de rutas:
 
-const routes = {
+export const routes = {
   "/": HOME,
   "/chatGrupal": groupChat,
   "/individualChat": individualChat,

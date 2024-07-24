@@ -14,30 +14,18 @@ export const renderItems = (data) => {
     //insertar contenido html al li//
     card.innerHTML = `
       <div class = "image-container">
-        <img src="${philosophers.imageUrl}" alt="${
-      philosophers.name
-    }" itemprop="image"/>
+        <img src="${philosophers.imageUrl}" alt="${philosophers.name}" itemprop="image"/>
         <h3 itemprop="givenName"><strong>${philosophers.name}</strong></h3>
       </div>
       <div class ="info">
       <p itemprop="description"> ${philosophers.shortDescription}</p>
-      <p itemprop="branchOfPhilosophy"><strong>Ramas de la filosofía:</strong> ${philosophers.branchOfPhilosophy.join(
-        ", "
-      )}</p>
-      <p itemprop="typeOfPhilosophy"><strong>Corrientes:</strong> ${philosophers.typeOfPhilosophy.join(
-        ", "
-      )}</p>
-      <p itemprop="classification"><strong>Tradición:</strong> ${
-        philosophers.facts.classification
-      }</p>
-      <p itemprop="century"><strong>Siglo:</strong> ${
-        philosophers.facts.century
-      }</p>
+      <p itemprop="branchOfPhilosophy"><strong>Ramas de la filosofía:</strong> ${philosophers.branchOfPhilosophy.join(", ")}</p>
+      <p itemprop="typeOfPhilosophy"><strong>Corrientes:</strong> ${philosophers.typeOfPhilosophy.join(", ")}</p>
+      <p itemprop="classification"><strong>Tradición:</strong> ${philosophers.facts.classification}</p>
+      <p itemprop="century"><strong>Siglo:</strong> ${philosophers.facts.century}</p>
       <div itemprop="mainWorks">
       <h4>Obras Principales</h4> 
-       ${philosophers.mainWorks
-         .map((work) => `<p> <i>  ${work.title} </i> —  ${work.year}</p>`)
-         .join(" ")} 
+       ${philosophers.mainWorks.map((work) => `<p> <i>  ${work.title} </i> —  ${work.year}</p>`).join(" ")} 
       </div>
       </div>
       `;
@@ -49,7 +37,7 @@ export const renderItems = (data) => {
     cards.forEach((card) => {
       card.addEventListener("click", () => {
         const cardID = card.getAttribute("data-id");
-        navigateTo("/individualChat", {id : cardID});
+        navigateTo("/individualChat", { id: cardID });
       });
     });
   };
