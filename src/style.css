@@ -3,6 +3,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Playwrite+MX&family=Playwrite+US+Trad&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Silkscreen&display=swap');
 
+.philosopher-info{
+  background-color: #d8d7d3;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.philosopher-info img{
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+}
+
 body {
   display: flex;
   flex-flow: column wrap;
@@ -141,6 +152,7 @@ select {
   border: solid #A68C76 5px;
   width: 45%;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .image-container {
@@ -316,6 +328,7 @@ input[type="checkbox"] {
   footer {
     font-size: 10px;
   }
+  
 }
 
 @media (min-width:481px) and (max-width:1024px) {
@@ -404,4 +417,4 @@ input[type="checkbox"] {
   footer {
     font-size: 10px;
   }
-}
+} 
