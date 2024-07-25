@@ -3,17 +3,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Playwrite+MX&family=Playwrite+US+Trad&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Silkscreen&display=swap');
 
+.mainIndividual{
+display: flex;
+background-color:#d8d7d3;
+flex-flow: row nowrap;
+align-items: center;
+}
+
 .philosopher-info{
   background-color: #d8d7d3;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 .philosopher-info img{
-  width: 10%;
-  height: 10%;
+  width: 30%;
+  height: 30%;
   border-radius: 50%;
 }
-
+.chat-container{
+  display: row wrap;
+}
+.chat-container img{
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
+}
 body {
   display: flex;
   flex-flow: column wrap;
@@ -234,6 +249,9 @@ input[type="checkbox"] {
 }
 
 @media (max-width:480px) {
+  .philosopher-info{
+    display: none
+  }
   header {
     display: flex;
     flex-flow: row nowrap;
@@ -417,4 +435,12 @@ input[type="checkbox"] {
   footer {
     font-size: 10px;
   }
+  .philosopher-info{
+    display: none;
+  }
 } 
+@media (min-width:1024px){
+  .mobile-only{
+    display:none
+  }
+}
