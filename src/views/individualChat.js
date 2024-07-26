@@ -20,20 +20,20 @@ export function individualChat(props) {
     </div>
     <div class = "chat-messages">
       <div class = "message-received">
-        <p> you know they say all men are created equal but you look at me and you look at samoa joe and you can clearly see that statement is not true. </p>
+        <img src = "${selectedPhilosopher.imageUrl}" alt = "${selectedPhilosopher.name}"/> <p class = "text-received"> you know they say all men are created equal but you look at me and you look at samoa joe and you can clearly see that statement is not true. </p>
     </div>
       <div class = "message-sent">
-        <p>  go to bed granpa </p>
+        <img src = "./assets/user-icon.png" alt = "user-icon"/> <p class = "text-sent"> go to bed granpa </p>  
+      </div>
+      <div class = "chat-input">
+      <input type = "text" placeholder = "Escribe un mensaje"/>
+      <button class = "send-message"> ➤ </button>
       </div>
     </div>
-    <div class = "chat-input">
-      <input type = "text" placeholder = "Escribe un mensaje"/>
-      <button class = "send-message"> Enviar </button>
-      </div>
   </div> 
   <div class = "philosopher-info">
-    <h3> ${selectedPhilosopher.name} </h3>
     <img itemprop = "image" alt = "${selectedPhilosopher.name}" src = "${selectedPhilosopher.imageUrl}"/>
+    <h3> ${selectedPhilosopher.name} </h3>
     <p itemprop = "description"> ${selectedPhilosopher.description}</p>
     <p itemprop = "branchOfPhilsophy"><strong> Ramas de la filosofía: </strong> ${selectedPhilosopher.branchOfPhilosophy.join(",")}</p>
     <p itemprop = "typeOfPhilosophy"><strong> Corrientes:</strong> ${selectedPhilosopher.typeOfPhilosophy.join(", ")}</p>

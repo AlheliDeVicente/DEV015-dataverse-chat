@@ -25,7 +25,9 @@
  .main-individual{
 display: flex;
 flex-flow: row nowrap;
-justify-content: space-around;
+justify-content: space-evenly;
+margin-top: 2%;
+margin-bottom: 2%;
 }
 
 .philosopher-info{
@@ -33,11 +35,11 @@ justify-content: space-around;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  width: 40%;
+  width: 30%;
   border-radius: 8px;
   font-family: "Lora", serif;
-  padding: 1%
-
+  padding: 1%;
+  box-shadow: 10px 10px 10px black;
 }
 .philosopher-info img{
   width: 30%;
@@ -45,63 +47,104 @@ justify-content: space-around;
   border-radius: 50%;
 }
 .chat-container{
+  display: flex;
+  flex-flow: row wrap;
   padding: 1%;
-  background-color: #ffffffe1;
+  background-color: #D9DDE4;
   border-radius: 8px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 10px black;
+  justify-content: center;
+  align-items: baseline;
+  width: 50%;
+  font-family: "Lora", serif;
 }
 .chat-header {
-  border-bottom: solid #690202;
+  padding: 3%;
+  border-bottom: 2px solid #6C7C79;
   font-family: "Lora", serif;
-  font-size: x-small;
+  font-size: small;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  width: 100%;
 }
 .chat-header img{
-  width: 15%;
-  height: 15%;
+  width: 20%;
+  height: 20%;
   border-radius: 50%;
 }
 .chat-header h3 {
   margin: 0; 
 }
 .chat-header p{
-  margin: 0 0 0 10px
+  margin: 0 
 } 
-.chat-messages{
+.chat-messages {
   display: flex;
-  flex-flow: column;
-}
-.message-received {
-  background-color: #e1ffc7;
-  align-self: flex-start;
-}
-
-.message-sent {
-  background-color: #c7e9ff;
+  flex-direction: column;
+  overflow-y: auto;
   align-self: flex-end;
 }
 
-.chat-input {
-  padding: 20px;
+.message-received, .message-sent {
   display: flex;
+  align-items: flex-end;
+  max-width: 70%;
+  margin-bottom: 2%;
+}
+
+.message-received {
+  align-self: flex-start;
+  justify-content: baseline;
+}
+
+.message-received img {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.message-received p{
+  background-color: #ECE6F0;
+  border-radius: 20px 20px 20px 0;
+  padding: 5%;
+}
+.message-sent {
+  align-self: flex-end;
+  flex-flow: row-reverse
+}
+.message-sent p{
+  background-color: #6C7C79;
+  border-radius: 20px 20px 0px 20px;
+  padding: 5%;
+}
+.message-sent img {
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.chat-input {
+  display: flex;
+  padding: 3%;
+  border-top: 2px solid #6C7C79;
   align-items: center;
-  border-top: 1px solid #ccc;
 }
 
 .chat-input input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 5px;
+  border:rgba(0, 0, 0, 0.1) ;
   border-radius: 20px;
-  outline: none;
+  justify-self: flex-start;
+  background-color: #CCC2DC;
+  width: 80%
 }
 
 .chat-input button {
   padding: 10px 20px;
   margin-left: 10px;
-  background-color: #007bff;
+  background-color: #49454F;
   color: #fff;
   border: none;
   border-radius: 20px;
@@ -136,7 +179,7 @@ header {
 }
 
 .header-buttons{
-  background-color: #8C322A;
+  background-color: #8C342B;
   height: 40px;
   color:white ;
   border-radius: 15px;
@@ -331,8 +374,33 @@ footer {
 }
 
 @media (max-width:480px) {
+  
+.message-received, .message-sent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  max-width: 80%;
+  font-size: x-small;
+}
 
-  .philosopher-info{
+.chat-container{
+    width: 80%
+  }
+.chat-header {
+    padding: 1%;
+    border-bottom: solid #690202;
+    font-family: "Lora", serif;
+    font-size: x-small;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+.chat-header img{
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+  }
+.philosopher-info{
     display: none
   }
 
