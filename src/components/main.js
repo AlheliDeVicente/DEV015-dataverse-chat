@@ -10,16 +10,16 @@ import { renderItems } from "./renderItems.js";
 export const main = () => {
   const componentMain = document.createElement("main");
   componentMain.innerHTML = `
-<h2>Explora y encuentra a tu filósofo preferido</h2>
+<h2 class = "h2-home"> Explora y encuentra a tu filósofo preferido</h2>
 <input type="checkbox" id="btn-menu">
 <div class="search-section">
   <input type="text" class="nombreFilosofo" id="philosopherName" placeholder="search"/> 
-  <button id="search">&#128269;</button>
-  <button data-testid="button-clear">Limpiar</button>
+  <button class = "home-buttons" id="search">&#128269;</button>
+  <button class = "home-buttons" data-testid="button-clear">Limpiar</button>
   <label for="btn-menu" id="btn-label">filtros</label>
 </div>
 <div class="side-menu">
-  <label id="close-btn" for="btn-menu">&times;</label>
+  <label id="close-btn" for="btn-menu">☒</label>
   <aside class="filters">
   <label for="select-filter">Rama</label>
   <select id= "select-filter" data-testid="select-filter" name="branch">
@@ -27,10 +27,10 @@ export const main = () => {
     <option value="Ética">Ética</option>
     <option value="Teoría de género">Teoría de Género</option>
     <option value="Epistemología">Epistemología</option>
-    <option value="Metafísica">Metafísica</option>
+    <option value="Metafísia">Metafísica</option>
     <option value="Lógica">Lógica</option>
     <option value="Filosofía política">F. Política</option>
-    <option value="Teología">Teología</option>
+    <option value="Teología">cTeología</option>
   </select>
   <label for="selectfilter1">Corriente</label>
   <select id= "selectfilter1" data-testid="select-filter1" name="type">
@@ -56,7 +56,7 @@ export const main = () => {
 </aside> 
 </div>
 <section id="cards-container"></section>
-<button data-testid="show-stats" id="statsButton">Datos de interés</button>
+<button class = "home-buttons" data-testid="show-stats" id="statsButton">Datos de interés</button>
 <section id="stats">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <table class="columns">
