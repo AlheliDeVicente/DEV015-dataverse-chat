@@ -42,7 +42,7 @@ export const data = [
     id: "parmenides",
     name: "Parménides",
     shortDescription: "Filósofo presocrático griego, fundador de la escuela eleática.",
-    description: " filósofo griego del siglo V a.C., es conocido por su obra poética-filosófica 'Sobre la naturaleza', donde plantea su doctrina de la realidad como un todo inmutable y eterno. Contrapuesto a Heráclito, Parménides argumenta que el cambio y la multiplicidad son ilusorios, defendiendo la unidad y la permanencia del Ser como verdades fundamentales. Su influencia se extiende a la metafísica y la epistemología, explorando temas como el ser, la verdad y el conocimiento racional. Su enfoque riguroso y abstracto sobre la naturaleza del Ser ha dejado una marca indeleble en la historia del pensamiento occidental.",
+    description: " Filósofo griego del siglo V a.C., es conocido por su obra poética-filosófica 'Sobre la naturaleza', donde plantea su doctrina de la realidad como un todo inmutable y eterno. Contrapuesto a Heráclito, Parménides argumenta que el cambio y la multiplicidad son ilusorios, defendiendo la unidad y la permanencia del Ser como verdades fundamentales. Su influencia se extiende a la metafísica y la epistemología, explorando temas como el ser, la verdad y el conocimiento racional. Su enfoque riguroso y abstracto sobre la naturaleza del Ser ha dejado una marca indeleble en la historia del pensamiento occidental.",
     imageUrl: "assets/filosofos/parmenides.jpg",
     mainWorks: [
       { title: "Sobre la naturaleza", year: -475}
@@ -162,7 +162,7 @@ export const data = [
     id: "averroes",
     name: "Averroes",
     shortDescription: "Filósofo y médico musulmán medieval.",
-    description: "también conocido como Ibn Rushd, fue un filósofo, jurista y médico andalusí nacido en Córdoba en 1126. Es famoso por sus comentarios sobre Aristóteles y su intento de reconciliar la filosofía griega con el pensamiento islámico. Averroes defendió la autonomía de la razón y la importancia de la filosofía para comprender la verdad. Su interpretación de Aristóteles, conocida como 'averroísmo', tuvo un impacto profundo en el pensamiento europeo medieval y renacentista. Fue una figura clave en la traducción y transmisión del conocimiento clásico griego al mundo árabe y europeo, influenciando así el desarrollo de la filosofía y la ciencia.",
+    description: "También conocido como Ibn Rushd, fue un filósofo, jurista y médico andalusí nacido en Córdoba en 1126. Es famoso por sus comentarios sobre Aristóteles y su intento de reconciliar la filosofía griega con el pensamiento islámico. Averroes defendió la autonomía de la razón y la importancia de la filosofía para comprender la verdad. Su interpretación de Aristóteles, conocida como 'averroísmo', tuvo un impacto profundo en el pensamiento europeo medieval y renacentista. Fue una figura clave en la traducción y transmisión del conocimiento clásico griego al mundo árabe y europeo, influenciando así el desarrollo de la filosofía y la ciencia.",
     imageUrl: "assets/filosofos/averroes.jpg",
     mainWorks: [
       { title: "Comentarios sobre Aristóteles", year: 1190 },
@@ -386,7 +386,7 @@ export const data = [
     id: "friedrich_nietzsche",
     name: "Friedrich Nietzsche",
     shortDescription: "Filósofo alemán, crítico de la cultura y la moral.",
-    description: "filósofo alemán del siglo XIX, es conocido por desafiar convenciones morales y religiosas en sus obras como 'Así habló Zaratustra' y 'Genealogía de la moral'. Criticó la moral tradicional occidental y proclamó la muerte de Dios, argumentando que las estructuras morales eran construcciones humanas sujetas a reinterpretación. Propuso el concepto de la 'voluntad de poder', donde la vida se entiende como una lucha por el poder y la afirmación de la individualidad. Su filosofía influyó profundamente en el existencialismo, el nihilismo y la crítica cultural moderna, impactando en la teoría y la literatura contemporánea.",
+    description: "Filósofo alemán del siglo XIX, es conocido por desafiar convenciones morales y religiosas en sus obras como 'Así habló Zaratustra' y 'Genealogía de la moral'. Criticó la moral tradicional occidental y proclamó la muerte de Dios, argumentando que las estructuras morales eran construcciones humanas sujetas a reinterpretación. Propuso el concepto de la 'voluntad de poder', donde la vida se entiende como una lucha por el poder y la afirmación de la individualidad. Su filosofía influyó profundamente en el existencialismo, el nihilismo y la crítica cultural moderna, impactando en la teoría y la literatura contemporánea.",
     imageUrl: "assets/filosofos/Nietzsche.jpg",
     mainWorks: [
       { title: "Así habló Zaratustra", year: 1883 },
@@ -426,7 +426,7 @@ export const data = [
     id: "ludwig_wittgenstein",
     name: "Ludwig Wittgenstein",
     shortDescription: "Filósofo austriaco-británico, influyente en la filosofía del lenguaje.",
-    description: "ilósofo austro-británico, es conocido por su impacto en la filosofía analítica y la filosofía del lenguaje. En su obra 'Tractatus Logico-Philosophicus', buscó clarificar la relación entre el lenguaje, el pensamiento y la realidad, proponiendo una teoría del significado basada en la lógica y la estructura proposicional. Más tarde, en 'Investigaciones Filosóficas', revisó sus ideas previas, centrándose en el uso práctico del lenguaje y la naturaleza de los juegos de lenguaje. Wittgenstein influyó profundamente en la epistemología y la filosofía de la mente, abordando cuestiones de significado, conocimiento y experiencia humana con rigor analítico.",
+    description: "Filósofo austro-británico, es conocido por su impacto en la filosofía analítica y la filosofía del lenguaje. En su obra 'Tractatus Logico-Philosophicus', buscó clarificar la relación entre el lenguaje, el pensamiento y la realidad, proponiendo una teoría del significado basada en la lógica y la estructura proposicional. Más tarde, en 'Investigaciones Filosóficas', revisó sus ideas previas, centrándose en el uso práctico del lenguaje y la naturaleza de los juegos de lenguaje. Wittgenstein influyó profundamente en la epistemología y la filosofía de la mente, abordando cuestiones de significado, conocimiento y experiencia humana con rigor analítico.",
     imageUrl: "assets/filosofos/wittgenstein.jpg",
     mainWorks: [
       { title: "Tractatus Logico-Philosophicus", year: 1921 },
@@ -467,7 +467,7 @@ export const data = [
     id: "judith_butler",
     name: "Judith Butler",
     shortDescription: "Filósofa estadounidense, influyente en teoría de género.",
-    description: "filósofa y teórica feminista reconocida por su influencia en los estudios de género y la teoría queer. Su trabajo revoluciona las ideas sobre identidad y performatividad de género, argumentando que el género es una construcción social y no algo dado biológicamente. Butler ha explorado cómo las normas sociales y el lenguaje moldean nuestras identidades y relaciones. Es autora de obras influyentes como 'El género en disputa', donde cuestiona las categorías binarias de género y propone una visión más fluida y subversiva. Su trabajo ha sido fundamental en la expansión del feminismo y la teoría crítica contemporánea.",
+    description: "Filósofa y teórica feminista reconocida por su influencia en los estudios de género y la teoría queer. Su trabajo revoluciona las ideas sobre identidad y performatividad de género, argumentando que el género es una construcción social y no algo dado biológicamente. Butler ha explorado cómo las normas sociales y el lenguaje moldean nuestras identidades y relaciones. Es autora de obras influyentes como 'El género en disputa', donde cuestiona las categorías binarias de género y propone una visión más fluida y subversiva. Su trabajo ha sido fundamental en la expansión del feminismo y la teoría crítica contemporánea.",
     imageUrl: "assets/filosofos/butler.jpg",
     mainWorks: [
       { title: "Gender Trouble", year: 1990 },

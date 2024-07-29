@@ -14,8 +14,8 @@ export const main = () => {
 <input type="checkbox" id="btn-menu">
 <div class="search-section">
   <input type="text" class="nombreFilosofo" id="philosopherName" placeholder="search"/> 
-  <button class = "home-buttons" id="search">🔎︎</button>
-  <button class = "home-buttons" data-testid="button-clear">Limpiar</button>
+  <button id="search">🔎︎</button>
+  <button class = "clearButton" data-testid="button-clear">Limpiar</button>
   <label for="btn-menu" id="btn-label">filtros</label>
 </div>
 <div class="side-menu">
