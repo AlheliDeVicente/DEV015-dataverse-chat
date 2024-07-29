@@ -35,7 +35,7 @@ export function individualChat(props) {
     <img itemprop = "image" alt = "${selectedPhilosopher.name}" src = "${selectedPhilosopher.imageUrl}"/>
     <h3> ${selectedPhilosopher.name} </h3>
     <p itemprop = "description"> ${selectedPhilosopher.description}</p>
-    <p itemprop = "branchOfPhilsophy"><strong> Ramas de la filosofía: </strong> ${selectedPhilosopher.branchOfPhilosophy.join(",")}</p>
+    <p itemprop = "branchOfPhilsophy"><strong> Ramas de la filosofía: </strong> ${selectedPhilosopher.branchOfPhilosophy.join(", ")}</p>
     <p itemprop = "typeOfPhilosophy"><strong> Corrientes:</strong> ${selectedPhilosopher.typeOfPhilosophy.join(", ")}</p>
     <p itemprop="classification"><strong>Tradición:</strong> ${selectedPhilosopher.facts.classification}</p>
     <p itemprop="century"><strong>Siglo:</strong> ${selectedPhilosopher.facts.century}</p>

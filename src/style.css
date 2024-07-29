@@ -134,21 +134,25 @@ margin-bottom: 2%;
 
 .chat-input input {
   padding: 5px;
-  border:rgba(0, 0, 0, 0.1) ;
+  border: 1px solid #AFAFBF;
   border-radius: 20px;
   justify-self: flex-start;
   background-color: #CCC2DC;
-  width: 80%
+  height: 20px;
+  width: 100%
 }
 
 .chat-input button {
-  padding: 10px 20px;
-  margin-left: 10px;
+  padding: 6px;
   background-color: #49454F;
-  color: #fff;
   border: none;
-  border-radius: 20px;
+  color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;;
   cursor: pointer;
+  margin-left: -10%;
+  height: 30px;
+  width: 10%
 }
 
 /*header elements*/
@@ -183,6 +187,9 @@ header {
   height: 40px;
   color:white ;
   border-radius: 15px;
+  cursor: pointer;
+  border: 1px solid #260101;
+  box-shadow: 3px 3px 3px black;
   }
 
 /*Home Elements*/
@@ -230,6 +237,13 @@ header {
   color: rgb(255, 255, 255);
   margin-left: 10px;
   font-family: "Lora", serif;
+}
+#search{
+  margin-left: -26px;
+  border: none;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  height:33px
 }
 
 .nombreFilosofo {
@@ -432,8 +446,11 @@ footer {
   }
 
   .nombreFilosofo {
-    width: 40%;
-    height: 15%
+    width: 50%;
+    height:50%
+  }
+  #search{
+    height:50pxb
   }
 
   button {
