@@ -6,8 +6,8 @@ export const header = () => {
 <img src="assets/logo.png" alt="logo" id="logo"/>
 </div>
       <h1 id="title">σοφία αιώνια</h1>
-      <button id="groupChat"> Chat Grupal </button>
-      <button id="APIKey"> API Key </button>
+      <button class= "header-buttons" id="groupChat"> Chat Grupal </button>
+      <button class = "header-buttons" id="APIKey"> API Key </button>
 `;
   const groupChatBttn = componentHeader.querySelector("#groupChat");
   const apiKeyButton = componentHeader.querySelector("#APIKey");
