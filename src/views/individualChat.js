@@ -11,6 +11,8 @@ export function individualChat(props) {
   const mainContent = document.createElement("main")
   mainContent.setAttribute("class", "main-individual")
   mainContent.innerHTML = `
+  <div itemprop = "extraInfo" id ="funFact">&#x1F4A1</div>
+  <div class = 'row-container'>
   <div class = chat-container>
     <div class = "chat-header">
      <img src = "${selectedPhilosopher.imageUrl}" alt = "${selectedPhilosopher.name}"/>
@@ -44,7 +46,15 @@ export function individualChat(props) {
        ${selectedPhilosopher.mainWorks.map((work) => `<p> <i>  ${work.title} </i> —  ${work.year}</p>`).join(" ")} 
     </div> 
 </div>
+</div>
 `
+  const funfact = mainContent.querySelector("#funFact")
+  funfact.addEventListener("click", ()=>{
+    const textFact = document.createElement("span")
+    textFact.setAttribute("id", "textPartFun")
+    textFact.innerHTML = `Fun Fact: ${selectedPhilosopher.facts.extraInfo}`
+    funfact.append(textFact)
+  })
   viewEl.appendChild(headerElement)
   viewEl.appendChild(mainContent)
   viewEl.appendChild(footerElement)

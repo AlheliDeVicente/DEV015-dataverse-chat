@@ -22,7 +22,7 @@
   position: fixed;
 }
 
- .main-individual{
+ .row-container{
 display: flex;
 flex-flow: row nowrap;
 justify-content: space-evenly;
@@ -154,7 +154,18 @@ margin-bottom: 2%;
   height: 30px;
   width: 10%
 }
-
+.main-individual{
+  display: flex;
+  flex-flow: column;
+}
+#textPartFun{
+  background-color: #A6AFA7;
+  font-family: "Lora", serif;
+  font-size: small;
+}
+#funFact{
+  cursor: pointer
+}
 /*header elements*/
 header {
   display: flex;
@@ -191,7 +202,43 @@ header {
   border: 1px solid #260101;
   box-shadow: 3px 3px 3px black;
   }
+/*elementosApiKey*/
+.main-API{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80vh;
+}
+.apih2{
+  font-family: "Lora", serif;
+  font-style: italic;
+}
 
+#API-Key{
+  height: 20px;
+  width: 300px
+}
+#saveAPI{
+  background-color: #8B3119;
+  height: 40px;
+  color:white ;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #260101;
+  box-shadow: 3px 3px 3px black;
+  margin-left: 20px
+  }
+#deleteAPI{
+  background-color: #8B3119;
+  height: 40px;
+  color:white ;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #260101;
+  box-shadow: 3px 3px 3px black;
+  margin-left: 20px
+}
 /*Home Elements*/
 .body-home::before {
   background-image: url("assets/image.jpg");
@@ -222,7 +269,6 @@ header {
 }
 
 .search-section {
-  margin: 5px 0;
   width: 80%;
   display: flex;
   flex-flow: row nowrap;
@@ -230,7 +276,7 @@ header {
   justify-content: flex-end;
 }
 
-.home-buttons {
+.clearButton {
   box-shadow: 1px 1px black;
   cursor: pointer;
   background-color: #260101;
@@ -239,16 +285,19 @@ header {
   font-family: "Lora", serif;
 }
 #search{
+  box-shadow: 1px 1px black;
+  cursor: pointer;
+  background-color: #260101;
+  color: rgb(255, 255, 255);
+  font-family: "Lora", serif;
   margin-left: -26px;
   border: none;
   border-bottom-right-radius: 50px;
   border-top-right-radius: 50px;
-  height:33px
 }
 
 .nombreFilosofo {
-  width: 60%;
-  height: 30px;
+  width:60%;
   background-color: white;
   border: 1px solid rgb(0, 0, 0);
   font-family: "Lora", serif;
@@ -424,7 +473,10 @@ footer {
     align-items: center;
     justify-content: space-around;
   }
-
+  .header-buttons{
+    width: 30%;
+    margin-left: 1.5%;
+  }
   #title {
     font-size: 20px;
   }
@@ -445,15 +497,7 @@ footer {
     width: 100%;
   }
 
-  .nombreFilosofo {
-    width: 50%;
-    height:50%
-  }
-  #search{
-    height:50pxb
-  }
-
-  button {
+  .clearButton {
     width: 15%;
     height: 10%;
     font-size: 7px;
@@ -536,6 +580,10 @@ footer {
   #logo {
     width: 30%
   }
+  .header-buttons{
+    width: 30%;
+    margin-left: 1.5%;
+  }
 
   #logo img {
     width: 100%
@@ -550,7 +598,7 @@ footer {
     height: 15%
   }
 
-  button {
+  .clearButton {
     width: 15%;
     height: 15%;
     font-size: 10px;
