@@ -3,14 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Playwrite+MX&family=Playwrite+US+Trad&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Silkscreen&display=swap');
 
-body {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-}
+/* Estructura del chat */
 
-body::before {
-  background-image: url("assets/image.jpg");
+.body-Individual ::before{
+  background-image: url("assets/prometheus.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -26,17 +22,145 @@ body::before {
   position: fixed;
 }
 
-main {
+ .main-individual{
+display: flex;
+flex-flow: row nowrap;
+justify-content: space-evenly;
+margin-top: 2%;
+margin-bottom: 2%;
+}
+
+.philosopher-info{
+  background-color: #A6AFA7;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 30%;
+  border-radius: 8px;
+  font-family: "Lora", serif;
+  padding: 1%;
+  box-shadow: 10px 10px 10px black;
+}
+.philosopher-info img{
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+}
+.chat-container{
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1%;
+  background-color: #D9DDE4;
+  border-radius: 8px;
+  box-shadow: 10px 10px 10px black;
+  justify-content: center;
+  align-items: baseline;
+  width: 50%;
+  font-family: "Lora", serif;
+}
+.chat-header {
+  padding: 3%;
+  border-bottom: 2px solid #6C7C79;
+  font-family: "Lora", serif;
+  font-size: small;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+}
+.chat-header img{
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+}
+.chat-header h3 {
+  margin: 0; 
+}
+.chat-header p{
+  margin: 0 
+} 
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  align-self: flex-end;
+}
+
+.message-received, .message-sent {
+  display: flex;
+  align-items: flex-end;
+  max-width: 70%;
+  margin-bottom: 2%;
+}
+
+.message-received {
+  align-self: flex-start;
+  justify-content: baseline;
+}
+
+.message-received img {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.message-received p{
+  background-color: #ECE6F0;
+  border-radius: 20px 20px 20px 0;
+  padding: 5%;
+}
+.message-sent {
+  align-self: flex-end;
+  flex-flow: row-reverse
+}
+.message-sent p{
+  background-color: #6C7C79;
+  border-radius: 20px 20px 0px 20px;
+  padding: 5%;
+}
+.message-sent img {
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.chat-input {
+  display: flex;
+  padding: 3%;
+  border-top: 2px solid #6C7C79;
   align-items: center;
 }
 
+.chat-input input {
+  padding: 5px;
+  border: 1px solid #AFAFBF;
+  border-radius: 20px;
+  justify-self: flex-start;
+  background-color: #CCC2DC;
+  height: 20px;
+  width: 100%
+}
+
+.chat-input button {
+  padding: 6px;
+  background-color: #49454F;
+  border: none;
+  color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;;
+  cursor: pointer;
+  margin-left: -10%;
+  height: 30px;
+  width: 10%
+}
+
+/*header elements*/
 header {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-top: 2px solid #8C342B;
   border-bottom: 2px solid #8C342B;
 }
@@ -58,7 +182,41 @@ header {
   font-size: 50px;
 }
 
-h2 {
+.header-buttons{
+  background-color: #8C342B;
+  height: 40px;
+  color:white ;
+  border-radius: 15px;
+  cursor: pointer;
+  border: 1px solid #260101;
+  box-shadow: 3px 3px 3px black;
+  }
+
+/*Home Elements*/
+.body-home::before {
+  background-image: url("assets/image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+  z-index: -1;
+  position: fixed;
+}
+
+.main-home {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.h2-home {
   font-family: "Lora", serif;
   font-style: italic;
 }
@@ -72,13 +230,20 @@ h2 {
   justify-content: flex-end;
 }
 
-button {
-  box-shadow: 3px 3px 3px black;
+.home-buttons {
+  box-shadow: 1px 1px black;
   cursor: pointer;
   background-color: #260101;
   color: rgb(255, 255, 255);
-  margin-left: 20px;
+  margin-left: 10px;
   font-family: "Lora", serif;
+}
+#search{
+  margin-left: -26px;
+  border: none;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  height:33px
 }
 
 .nombreFilosofo {
@@ -89,7 +254,7 @@ button {
   font-family: "Lora", serif;
   border-radius: 50px;
 }
-
+/*elementos del side menu*/
 .side-menu {
   width: 20%;
   height: 100vh;
@@ -102,81 +267,6 @@ button {
   z-index: 2;
   box-shadow: 10px 10px 10px black;
 }
-
-.filters {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-}
-
-label {
-  font-family: "Lora", serif;
-  margin-top: 25px;
-}
-
-select {
-  cursor: pointer;
-  background-color: #d9bba9e1;
-  color: rgb(0, 0, 0);
-  font-family: "Lora", serif;
-  margin-left: 5px;
-}
-
-.philosophersList {
-  margin: 20px 0;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-.philosophersCard {
-  padding: 1%;
-  margin: 1%;
-  display: flex;
-  align-items: center;
-  justify-content: baseline;
-  flex-flow: row nowrap;
-  font-family: "Lora", serif;
-  background-color: #d8d7d3;
-  border: solid #A68C76 5px;
-  width: 45%;
-  flex-grow: 1;
-}
-
-.image-container {
-  padding: 2%;
-}
-
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 100px;
-}
-
-#stats {
-  margin-bottom: 3%;
-  font-family: "Silkscreen", sans-serif;
-  font-weight: 700;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #d8d7d360;
-  width: 100%;
-}
-
-footer {
-  font-family: "Lora", serif;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: flex-end;
-  border-top: 2px solid #8C342B;
-  border-bottom: 2px solid #8C342B;
-  padding: 5px;
-}
-
 input:checked~.side-menu {
   transform: translateX(0%);
 }
@@ -199,11 +289,75 @@ input[type="checkbox"] {
 
 #close-btn {
   align-self: flex-end;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
   color: black;
   background: none;
   border: none;
+}
+
+.filters {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+label {
+  font-family: "Lora", serif;
+  margin-top: 25px;
+}
+
+select {
+  cursor: pointer;
+  background-color: #d9bba9e1;
+  color: rgb(0, 0, 0);
+  font-family: "Lora", serif;
+  margin-left: 5px;
+}
+/*cartas*/
+.philosophersList {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.philosophersCard {
+  padding: 1%;
+  margin: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  flex-flow: row nowrap;
+  font-family: "Lora", serif;
+  background-color: #d8d7d3;
+  border: solid #A68C76 5px;
+  width: 45%;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.image-container {
+  padding: 2%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100px;
+}
+/*stats button y section*/
+#stats {
+  margin-bottom: 3%;
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #d8d7d360;
+  width: 100%;
 }
 
 #statsButton {
@@ -221,7 +375,49 @@ input[type="checkbox"] {
   margin-top: 25px;
 }
 
+/*footer element*/
+footer {
+  font-family: "Lora", serif;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-end;
+  border-top: 2px solid #8C342B;
+  border-bottom: 2px solid #8C342B;
+  padding: 5px;
+}
+
 @media (max-width:480px) {
+  
+.message-received, .message-sent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  max-width: 80%;
+  font-size: x-small;
+}
+
+.chat-container{
+    width: 80%
+  }
+.chat-header {
+    padding: 1%;
+    border-bottom: solid #690202;
+    font-family: "Lora", serif;
+    font-size: x-small;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+.chat-header img{
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+  }
+.philosopher-info{
+    display: none
+  }
+
   header {
     display: flex;
     flex-flow: row nowrap;
@@ -250,8 +446,11 @@ input[type="checkbox"] {
   }
 
   .nombreFilosofo {
-    width: 40%;
-    height: 15%
+    width: 50%;
+    height:50%
+  }
+  #search{
+    height:50pxb
   }
 
   button {
@@ -316,9 +515,13 @@ input[type="checkbox"] {
   footer {
     font-size: 10px;
   }
+  
 }
 
 @media (min-width:481px) and (max-width:1024px) {
+  .philosopher-info{
+    display: none
+  }
   header {
     display: flex;
     flex-flow: row nowrap;
@@ -404,4 +607,12 @@ input[type="checkbox"] {
   footer {
     font-size: 10px;
   }
-}
+  .philosopher-info{
+    display: none;
+  }
+} 
+@media (min-width:1024px){
+  .mobile-only{
+    display:none
+  }
+} 
