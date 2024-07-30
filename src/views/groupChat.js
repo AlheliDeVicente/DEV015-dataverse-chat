@@ -6,6 +6,8 @@ export function groupChat(){
   viewEl.appendChild(headerElement)
   const footerElement = footer()
   viewEl.appendChild(footerElement)
+  const bodyIndividual = document.querySelector("body")
+  bodyIndividual.setAttribute("class", "body-Individual")
   return viewEl;
 }
   
