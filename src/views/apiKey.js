@@ -1,6 +1,6 @@
 import { footer } from "../components/footer.js";
 import { header } from "../components/header.js";
-import { setApiKey, deleteApiKey} from "../lib/apikey.js";
+import { setApiKey, deleteApiKey } from "../lib/apiKey.js";
 export function APIKEY () {
   const viewEl = document.createElement("div");
   const headerElement = header();
@@ -10,6 +10,7 @@ export function APIKEY () {
   const bodyIndividual = document.querySelector("body")
   bodyIndividual.setAttribute("class", "body-Individual")
   mainContent.innerHTML = `
+  <link id = "css" rel="stylesheet" href="apiKey.css"/>
   <h2 class = "apih2"> Desde aquí puedes administrar la API Key a utilizar </h2>
   <div class = "apiDiv"> 
     <input type = "text" id="API-Key"/>  
@@ -23,7 +24,7 @@ export function APIKEY () {
   const saveButton = mainContent.querySelector('#saveAPI')
   clearBttn.addEventListener("click", () => {
     textApi.value = "";
-    deleteApiKey
+    deleteApiKey()
   });
   saveButton.addEventListener('click', ()=>{
     const apiKeyValue = textApi.value

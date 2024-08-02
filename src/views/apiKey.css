@@ -1,0 +1,36 @@
+.main-API{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80vh;
+  }
+  .apih2{
+    font-family: "Lora", serif;
+    font-style: italic;
+  }
+  
+  #API-Key{
+    height: 20px;
+    width: 300px
+  }
+  #saveAPI{
+    background-color: #8B3119;
+    height: 40px;
+    color:white ;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #260101;
+    box-shadow: 3px 3px 3px black;
+    margin-left: 20px
+    }
+  #deleteAPI{
+    background-color: #8B3119;
+    height: 40px;
+    color:white ;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #260101;
+    box-shadow: 3px 3px 3px black;
+    margin-left: 20px
+  }

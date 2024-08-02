@@ -1,6 +1,30 @@
-// Importa la función para obtener la API KEY desde apiKey.js
-import { getApiKey } from './apiKey.js';
+import { getApiKey } from "./apiKey.js";
 
-export function communicateWithOpenAi(messages){
-  //Aquí es donde debes implementar la petición con fetch o axios
+export async function communicateWithOpenAi(messages) {
+  try {
+    const apiKey = await getApiKey();
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        "model": "gpt-4o",
+        "messages": messages
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+
+    const data = await response.json();
+    return data;
+
+  } catch (error) {
+    console.error("Error:", error.message);
+    throw error; // Re-lanzar el error para manejarlo en el código que llama a esta función
+  }
 }
+

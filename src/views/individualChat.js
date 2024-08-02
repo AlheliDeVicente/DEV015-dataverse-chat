@@ -11,29 +11,10 @@ export function individualChat(props) {
   const mainContent = document.createElement("main")
   mainContent.setAttribute("class", "main-individual")
   mainContent.innerHTML = `
+  <link id = "css" rel="stylesheet" href="individualChat.css"/>
   <div itemprop = "extraInfo" id ="funFact">&#x1F4A1</div>
   <div class = 'row-container'>
-  <div class = chat-container>
-    <div class = "chat-header">
-     <img src = "${selectedPhilosopher.imageUrl}" alt = "${selectedPhilosopher.name}"/>
-      <h3> ${selectedPhilosopher.name} </h3> 
-      <p class = "mobile-only"> ${selectedPhilosopher.shortDescription}</p>
-      <p class = "status"> En Línea </p>
-    </div>
-    <div class = "chat-messages">
-      <div class = "message-received">
-        <img src = "${selectedPhilosopher.imageUrl}" alt = "${selectedPhilosopher.name}"/> <p class = "text-received"> you know they say all men are created equal but you look at me and you look at samoa joe and you can clearly see that statement is not true. </p>
-    </div>
-      <div class = "message-sent">
-        <img src = "./assets/user-icon.png" alt = "user-icon"/> <p class = "text-sent"> go to bed granpa </p>  
-      </div>
-      <div class = "chat-input">
-      <input type = "text" placeholder = "Escribe un mensaje"/>
-      <button class = "send-message"> ➤ </button>
-      </div>
-    </div>
-  </div> 
-  <div class = "philosopher-info">
+   <div class = "philosopher-info">
     <img itemprop = "image" alt = "${selectedPhilosopher.name}" src = "${selectedPhilosopher.imageUrl}"/>
     <h3> ${selectedPhilosopher.name} </h3>
     <p itemprop = "description"> ${selectedPhilosopher.description}</p>
@@ -46,8 +27,53 @@ export function individualChat(props) {
        ${selectedPhilosopher.mainWorks.map((work) => `<p> <i>  ${work.title} </i> —  ${work.year}</p>`).join(" ")} 
     </div> 
 </div>
+  <div class = chat-container>
+    <div class = "chat-header">
+     <img src = "${selectedPhilosopher.imageUrl}" alt = "${selectedPhilosopher.name}"/>
+      <h3> ${selectedPhilosopher.name} </h3> 
+      <p class = "mobile-only"> ${selectedPhilosopher.shortDescription}</p>
+      <p class = "status"> En Línea </p>
+    </div>
+    <div class = "chat-main">
+    <div class = "chat-messages">
+      <div class = "message-received">
+        <img src = "${selectedPhilosopher.imageUrl}" alt = "${selectedPhilosopher.name}"/> <p class = "text-received"> you know they say all men are created equal but you look at me and you look at samoa joe and you can clearly see that statement is not true. </p>
+    </div>
+      <div class = "message-sent">
+        <img src = "./assets/user-icon.png" alt = "user-icon"/> <p class = "text-sent"> go to bed granpa </p>  
+      </div>
+      </div>
+      <div class = "chat-input">
+      <input type = "text" id = "user-input" placeholder = "Escribe un mensaje"/>
+      <button class = "send-message"> ➤ </button>
+      </div>
+      </div>
+  </div> 
+ 
 </div>
-`
+` 
+  const sendButton = mainContent.querySelector(".send-message")
+  const userInput = mainContent.querySelector("#user-input")
+  const messageContainers = mainContent.querySelector(".chat-messages")
+  
+  function addUserMessage(){
+    const userInputText = userInput.value 
+    const newUserMessage = document.createElement("div")
+    newUserMessage.setAttribute("class", "message-sent" )
+    newUserMessage.innerHTML = ` 
+    <img src = "./assets/user-icon.png" alt = "user-icon"/> <p class = "text-sent"> ${userInputText} </p> `
+    return messageContainers.appendChild(newUserMessage)
+  }
+  sendButton.addEventListener("click", ()=>{
+    addUserMessage()
+    userInput.value = ""
+  })
+  userInput.addEventListener("keypress", (event)=>{
+    if(event.key === "Enter"){
+      addUserMessage()
+      userInput.value = ""
+    }
+  })
   const funfact = mainContent.querySelector("#funFact")
   funfact.addEventListener("click", ()=>{
     const textFact = document.createElement("span")
