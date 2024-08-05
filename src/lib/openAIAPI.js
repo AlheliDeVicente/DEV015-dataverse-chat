@@ -1,8 +1,7 @@
-import { getApiKey } from "./apiKey.js";
-
+import { getApiKey } from "./apikey.js";
 export async function communicateWithOpenAi(messages) {
-  try {
-    const apiKey = await getApiKey();
+  try{
+    const apiKey = getApiKey();
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -24,7 +23,7 @@ export async function communicateWithOpenAi(messages) {
 
   } catch (error) {
     console.error("Error:", error.message);
-    throw error; // Re-lanzar el error para manejarlo en el código que llama a esta función
+    throw error; 
   }
 }
 

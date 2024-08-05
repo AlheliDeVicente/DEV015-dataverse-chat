@@ -74,8 +74,8 @@
     flex-direction: column;
     overflow-y: auto;
     align-self: flex-end;
-    overflow-y: auto;
-    max-height: 80vh;
+    max-height: 95vh;
+    min-height: 50vh;
 }
 
 .message-received,
@@ -216,10 +216,7 @@
     }
   
     header {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: space-around;
+      height: 50px;
     }
   
     #funFact {

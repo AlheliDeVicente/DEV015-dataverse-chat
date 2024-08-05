@@ -1,6 +1,6 @@
 import { footer } from "../components/footer.js";
 import { header } from "../components/header.js";
-import { setApiKey, deleteApiKey } from "../lib/apiKey.js";
+import { setApiKey, deleteApiKey } from "../lib/apikey.js";
 export function APIKEY () {
   const viewEl = document.createElement("div");
   const headerElement = header();
