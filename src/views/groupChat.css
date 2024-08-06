@@ -107,3 +107,12 @@
     height: 30px;
     width: 10%
 }
+@media (max-width:480px){
+    .side-container{
+        display: none;
+    }
+    .main-groupChat{
+        align-items: center;
+        justify-content: center;
+    }
+}

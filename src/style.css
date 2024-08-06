@@ -46,23 +46,6 @@
 
 @media (max-width:480px) {
 
-  .header-buttons {
-    width: 30%;
-    margin-left: 1.5%;
-  }
-
-  #title {
-    font-size: 20px;
-  }
-
-  #logo {
-    width: 30%
-  }
-
-  #logo img {
-    width: 100%
-  }
-
   h2 {
     font-size: 15px;
   }
@@ -142,30 +125,6 @@
 }
 
 @media (min-width:481px) and (max-width:1024px) {
-  header {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  #title {
-    font-size: 20px;
-  }
-
-  #logo {
-    width: 30%
-  }
-
-  .header-buttons {
-    width: 30%;
-    margin-left: 1.5%;
-  }
-
-  #logo img {
-    width: 100%
-  }
-
   h2 {
     font-size: 15px;
   }
@@ -235,11 +194,5 @@
 
   .philosopher-info {
     display: none;
-  }
-}
-
-@media (min-width:1024px) {
-  .mobile-only {
-    display: none
   }
 }
