@@ -1,5 +1,5 @@
 import {onURLChange, setRootEl, setRoutes } from "./router.js";
-import { groupChat } from "./views/groupChat.js";
+import { groupChat } from "./views/groupchat.js";
 import { individualChat } from "./views/individualChat.js";
 import { HOME } from './views/home.js';
 import { APIKEY } from "./views/apiKey.js";

@@ -9,5 +9,5 @@ export function setApiKey(key){
 }
 
 export function deleteApiKey(){
-  localStorage.remove()
+  localStorage.removeItem('apiKey')
 }

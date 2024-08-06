@@ -1,0 +1,168 @@
+
+.main-home {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+  
+  .h2-home {
+    font-family: "Lora", serif;
+    font-style: italic;
+  }
+  
+  .search-section {
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    justify-content: flex-end;
+  }
+  
+  .clearButton {
+    box-shadow: 1px 1px black;
+    cursor: pointer;
+    background-color: #260101;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    font-family: "Lora", serif;
+  }
+  #search{
+    box-shadow: 1px 1px black;
+    cursor: pointer;
+    background-color: #260101;
+    color: rgb(255, 255, 255);
+    font-family: "Lora", serif;
+    margin-left: -26px;
+    border: none;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+  }
+  
+  .nombreFilosofo {
+    width:60%;
+    background-color: white;
+    border: 1px solid rgb(0, 0, 0);
+    font-family: "Lora", serif;
+    border-radius: 50px;
+  }
+  /*elementos del side menu*/
+  .side-menu {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #A68C76;
+    transition: transform 0.5s ease;
+    transform: translateX(100%);
+    z-index: 2;
+    box-shadow: 10px 10px 10px black;
+  }
+  input:checked~.side-menu {
+    transform: translateX(0%);
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  #btn-label {
+    box-shadow: 4px 4px 4px black;
+    margin-left: 15px;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    z-index: 1;
+    background-color: #260101;
+    color: white;
+    padding: .5%;
+  }
+  
+  #close-btn {
+    align-self: flex-end;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    background: none;
+    border: none;
+  }
+  
+  .filters {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+  
+  label {
+    font-family: "Lora", serif;
+    margin-top: 25px;
+  }
+  
+  select {
+    cursor: pointer;
+    background-color: #d9bba9e1;
+    color: rgb(0, 0, 0);
+    font-family: "Lora", serif;
+    margin-left: 5px;
+  }
+  /*cartas*/
+  .philosophersList {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  
+  .philosophersCard {
+    padding: 1%;
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    flex-flow: row nowrap;
+    font-family: "Lora", serif;
+    background-color: #d8d7d3;
+    border: solid #A68C76 5px;
+    width: 45%;
+    flex-grow: 1;
+    cursor: pointer;
+  }
+  
+  .image-container {
+    padding: 2%;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+  /*stats button y section*/
+  #stats {
+    margin-bottom: 3%;
+    font-family: "Silkscreen", sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #d8d7d360;
+    width: 100%;
+  }
+  
+  #statsButton {
+    width: 25%;
+    box-shadow: 3px 3px 3px black;
+    margin-bottom: 2%;
+    cursor: pointer;
+    background-color: #260101;
+    color: rgb(255, 255, 255);
+    margin-left: 20px;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: bold;
+    margin-top: 25px;
+  }
+  

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Playwrite+MX&family=Playwrite+US+Trad&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Playwrite+MX&family=Playwrite+US+Trad&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25+Charted&family=Silkscreen&display=swap');
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: 2px solid #8C342B;
+    border-bottom: 2px solid #8C342B;
+  }
+  
+  #logo {
+    width: 25%;
+    justify-self: flex-start;
+  }
+  
+  #logo img {
+    cursor: pointer;
+    width: 100%
+  }
+  
+  #title {
+    margin-left: 6%;
+    align-self: center;
+    font-family: "Philosopher", sans-serif;
+    font-size: 50px;
+  }
+  
+  .header-buttons{
+    background-color: #8C342B;
+    height: 40px;
+    color:white ;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 1px solid #260101;
+    box-shadow: 3px 3px 3px black;
+    }
+    
