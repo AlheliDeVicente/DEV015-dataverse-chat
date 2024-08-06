@@ -10,33 +10,34 @@ import { renderItems } from "./renderItems.js";
 export const main = () => {
   const componentMain = document.createElement("main");
   componentMain.innerHTML = `
-<h2 class = "h2-home"> Explora y encuentra a tu filósofo preferido</h2>
-<input type="checkbox" id="btn-menu">
-<div class="search-section">
-  <input type="text" class="nombreFilosofo" id="philosopherName" placeholder="search"/> 
-  <button id="search">🔎︎</button>
-  <button class = "clearButton" data-testid="button-clear">Limpiar</button>
-  <label for="btn-menu" id="btn-label">filtros</label>
-</div>
-<div class="side-menu">
-  <label id="close-btn" for="btn-menu">☒</label>
-  <aside class="filters">
-  <label for="select-filter">Rama</label>
-  <select id= "select-filter" data-testid="select-filter" name="branch">
-    <option value="">Selecciona una rama</option>
-    <option value="Ética">Ética</option>
-    <option value="Teoría de género">Teoría de Género</option>
-    <option value="Epistemología">Epistemología</option>
-    <option value="Metafísia">Metafísica</option>
-    <option value="Lógica">Lógica</option>
-    <option value="Filosofía política">F. Política</option>
-    <option value="Teología">cTeología</option>
-  </select>
+    <link id = "css" rel="stylesheet" href="main.css"/>
+    <h2 class = "h2-home"> Explora y encuentra a tu filósofo preferido</h2>
+    <input type="checkbox" id="btn-menu">
+    <div class="search-section">
+      <input type="text" class="nombreFilosofo" id="philosopherName" placeholder="search"/> 
+      <button id="search">🔎︎</button>
+      <button class = "clearButton" data-testid="button-clear">Limpiar</button>
+      <label for="btn-menu" id="btn-label">filtros</label>
+    </div>
+    <div class="side-menu">
+     <label id="close-btn" for="btn-menu">☒</label>
+      <aside class="filters">
+      <label for="select-filter">Rama</label>
+      <select id= "select-filter" data-testid="select-filter" name="branch">
+        <option value="">Selecciona una rama</option>
+        <option value="Ética">Ética</option>
+        <option value="Teoría de género">Teoría de Género</option>
+        <option value="Epistemología">Epistemología</option>
+        <option value="Metafísia">Metafísica</option>
+        <option value="Lógica">Lógica</option>
+        <option value="Filosofía política">F. Política</option>
+        <option value="Teología">cTeología</option>
+       </select>
   <label for="selectfilter1">Corriente</label>
-  <select id= "selectfilter1" data-testid="select-filter1" name="type">
-    <option value="">Selecciona una corriente</option>
-    <option value="Empirismo">Empirismo</option>
-    <option value="Idealismo alemán">Idealismo alemán</option>
+    <select id= "selectfilter1" data-testid="select-filter1" name="type">
+      <option value="">Selecciona una corriente</option>
+      <option value="Empirismo">Empirismo</option>
+      <option value="Idealismo alemán">Idealismo alemán</option>
     <option value="Racionalismo">Racionalismo</option>
     <option value="Existencialismo">Existencialismo</option>
     <option value="Idealismo">Idealismo</option>

@@ -2,6 +2,7 @@ import { navigateTo } from "../router.js";
 export const header = () => {
   const componentHeader = document.createElement("header");
   componentHeader.innerHTML = `
+  <link id = "css" rel="stylesheet" href="header.css"/>
 <div id = "logo">
 <img src="assets/logo.png" alt="logo" id="logo"/>
 </div>
