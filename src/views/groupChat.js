@@ -2,74 +2,80 @@ import { header } from "../components/header.js";
 import { footer } from "../components/footer.js";
 import { data } from "../data/dataset.js";
 import { communicateWithOpenAi } from "../lib/openAIAPI.js";
-export function groupChat() {  
+
+export function groupChat() {
   const viewEl = document.createElement("div");
   const headerElement = header();
   viewEl.appendChild(headerElement);
-  const footerElement = footer();
- 
-  // Cambiar la clase del body
-  const bodyIndividual = document.querySelector("body");
-  bodyIndividual.setAttribute("class", "body-Individual");
-
-  // Crear el contenido principal
+  const bodyIndividual = document.querySelector("body")
+  bodyIndividual.setAttribute("class", "body-Individual")
   const mainContent = document.createElement("main");
   mainContent.setAttribute("class", "main-groupChat");
   mainContent.innerHTML = `
-    <link id="css" rel="stylesheet" href="groupChat.css"/>
-    <div class="groupChat-container">
-      <div class="groupChat-header">
-        <h3>Timeless Wisdom</h3>
-        <p class="status">En Línea</p>
-      </div>
-      <div class="groupChat-main">
-        <div class="groupChat-messages"></div>
-        <div class="groupChat-input">
-          <input type="text" id="user-input" placeholder="Escribe un mensaje"/>
-          <button class="send-Groupmessage"> ➤ </button>
+      <div class="groupChat-container">
+        <div class="groupChat-header">
+          <h3>Timeless Wisdom</h3>
+          <p class="status">En Línea</p>
         </div>
-      </div>
-    </div>`
-  const philosophersList = document.createElement("div")
-  philosophersList.setAttribute("class", "side-container")
-  philosophersList.innerHTML = "En este chat:"
-  data.forEach((philosophers) => {
-    const littleCard = document.createElement("li")
-    littleCard.setAttribute("class", "info-individual")
-    littleCard.innerHTML = `<div class = "info-individual"><img src = "${philosophers.imageUrl}" alt = "${philosophers.name}" class = "each-image"/> <p class = "philosopherName">${philosophers.name}</p>`
-    philosophersList.appendChild(littleCard)
-  }
-  );
-  mainContent.appendChild(philosophersList)
-  const sendButton = mainContent.querySelector(".send-Groupmessage")
-  const userInput = mainContent.querySelector("#user-input")
-  const messageContainers = mainContent.querySelector(".groupChat-messages")
-  //añadir nuevo mensaje del usuario//
-  function addUserMessage(){
-    const userInputText = userInput.value
+        <div class="groupChat-main">
+          <div class="groupChat-messages"></div>
+          <div class="groupChat-input">
+            <input type="text" id="user-input" placeholder="Escribe un mensaje"/>
+            <button class="send-Groupmessage"> ➤ </button>
+          </div>
+        </div>
+      </div>`;
+
+  // Crear la lista de filósofos
+  const philosophersList = document.createElement("div");
+  philosophersList.setAttribute("class", "side-container");
+  philosophersList.innerHTML = "<h4>En este chat:</h4>";
+
+  data.forEach((philosopher) => {
+    const littleCard = document.createElement("li");
+    littleCard.setAttribute("class", "info-individual");
+    littleCard.innerHTML = `<div class="info-individual">
+        <img src="${philosopher.imageUrl}" alt="${philosopher.name}" class="each-image"/>
+        <p class="philosopherName">${philosopher.name}</p>
+      </div>`;
+    philosophersList.appendChild(littleCard);
+  });
+  mainContent.appendChild(philosophersList);
+
+  const messageContainers = mainContent.querySelector(".groupChat-messages");
+  const sendButton = mainContent.querySelector(".send-Groupmessage");
+  const userInput = mainContent.querySelector("#user-input");
+
+  // Función para añadir mensaje de usuario
+  function addUserMessage() {
+    const userInputText = userInput.value;
     const newUserMessage = document.createElement("div");
     newUserMessage.setAttribute("class", "message-sent");
-    newUserMessage.innerHTML = ` <img src = "./assets/user-icon.png" alt = "user-icon"/> <p class = "text-sent"> ${userInputText}</p>`
-    return messageContainers.appendChild(newUserMessage)
+    newUserMessage.innerHTML = `<img src="./assets/user-icon.png" alt="user-icon"/> <p class="text-sent">${userInputText}</p>`;
+    messageContainers.appendChild(newUserMessage);
   }
-  //respuesta de openAI//
-  async function addResponse() {
-    const message = {
-      role: "system",
-      content: `Debes generar una respuesta por cada uno de los filósofos en este arreglo ${data}. Tus respuestas deben ser muy concisas, entre 10 y 20 palabras.`,
-    };
-
+  
+  async function addGroupResponses() {
     try {
-      const response = await communicateWithOpenAi([
-        message,
-        { role: "user", content: userInput.value },
-      ]);
-      const openAiText = response.choices[0].message.content;
-      const newResponse = document.createElement("div");
-      newResponse.setAttribute("class", "message-received");
-      newResponse.innerHTML = `
-        <p class="text-received">${openAiText}</p>`;
-      messageContainers.appendChild(newResponse);
+      // Obtener las respuestas de todos los filósofos
+      const promises = data.map(async (philosopher) => {
+        return communicateWithOpenAi(userInput.value, philosopher);
+      });
+  
+      // Esperar todas las respuestas
+      const responses = await Promise.all(promises);
+  
+      // Mostrar las respuestas en el chat
+      responses.forEach((response, index) => {
+        const philosopher = data[index];  
+        const openAiText = response.choices[0].message.content;
+        const newResponse = document.createElement("div");
+        newResponse.setAttribute("class", "message-received");
+        newResponse.innerHTML = `
+          <img src="${philosopher.imageUrl}" alt="${philosopher.name}"/>
+          <p class="text-received">${openAiText}</p>`;
+        messageContainers.appendChild(newResponse);
+      });
     } catch (error) {
       console.error("Error:", error);
       const errorMessage = document.createElement("div");
@@ -79,13 +85,21 @@ export function groupChat() {
     }
   }
   
-  //boton enviar//
-  sendButton.addEventListener("click", ()=>{
-    addUserMessage()
-    addResponse()
-    userInput.value = ""
-  })
+  
+  
+
+  // Event listener para enviar mensaje
+  sendButton.addEventListener("click", () => {
+    const userMessage = userInput.value;
+    if (userMessage.trim() === "") return; // No enviar mensajes vacíos
+
+    addUserMessage();
+    addGroupResponses()
+    userInput.value = "";
+  });
+
   viewEl.appendChild(mainContent);
+  const footerElement = footer();
   viewEl.appendChild(footerElement);
   return viewEl;
 }

@@ -65,16 +65,8 @@ export function individualChat(props) {
   }
   //respuesta de openAI//
   async function addResponse() {
-    const message = {
-      role: "system",
-      content: `Eres el filósofo ${selectedPhilosopher.name} debes responder como él. Cuando te pregunten, sé bastante explícito en tus respuestas, que deben ser entre 50 y 100 palabras. Si puedes, recomienda bibliografía tuya si es posible. Adopta la personalidad del filósofo, aquí hay más información sobre ti ${selectedPhilosopher.description}`,
-    };
-
     try {
-      const response = await communicateWithOpenAi([
-        message,
-        { role: "user", content: userInput.value },
-      ]);
+      const response = await communicateWithOpenAi(userInput.value, selectedPhilosopher);
       const openAiText = response.choices[0].message.content;
       const newResponse = document.createElement("div");
       newResponse.setAttribute("class", "message-received");
@@ -90,6 +82,7 @@ export function individualChat(props) {
       messageContainers.appendChild(errorMessage);
     }
   }
+  
   
   //boton enviar//
   sendButton.addEventListener("click", ()=>{
