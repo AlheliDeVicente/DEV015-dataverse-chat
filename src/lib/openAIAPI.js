@@ -1,5 +1,5 @@
 import { getApiKey } from "./apikey.js";
-export async function communicateWithOpenAi(messages) {
+export async function communicateWithOpenAi(message) {
   try{
     const apiKey = getApiKey();
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -10,7 +10,7 @@ export async function communicateWithOpenAi(messages) {
       },
       body: JSON.stringify({
         "model": "gpt-4o",
-        "messages": messages
+        "messages": message
       })
     });
 

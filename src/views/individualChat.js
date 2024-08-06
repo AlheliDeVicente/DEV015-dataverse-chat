@@ -33,7 +33,7 @@ export function individualChat(props) {
        ${selectedPhilosopher.mainWorks.map((work) => `<p> <i>  ${work.title} </i> —  ${work.year}</p>`).join(" ")} 
     </div> 
 </div>
-  <div class = chat-container>
+  <div class = "individual-chatContainer">
     <div class = "chat-header">
      <img src = "${selectedPhilosopher.imageUrl}" alt = "${selectedPhilosopher.name}"/>
       <h3> ${selectedPhilosopher.name} </h3> 
@@ -67,7 +67,7 @@ export function individualChat(props) {
   async function addResponse() {
     const message = {
       role: "system",
-      content: `Eres el filósofo ${selectedPhilosopher.name} debes responder como él. Cuando te den un saludo, responde cordialmente. Cuando te pregunten, sé bastante explícito en tus respuestas, que deben ser entre 50 y 100 palabras. Si puedes, recomienda bibliografía tuya si es posible. Adopta la personalidad del filósofo, aquí hay más información sobre ti ${selectedPhilosopher.description}`,
+      content: `Eres el filósofo ${selectedPhilosopher.name} debes responder como él. Cuando te pregunten, sé bastante explícito en tus respuestas, que deben ser entre 50 y 100 palabras. Si puedes, recomienda bibliografía tuya si es posible. Adopta la personalidad del filósofo, aquí hay más información sobre ti ${selectedPhilosopher.description}`,
     };
 
     try {
@@ -94,17 +94,17 @@ export function individualChat(props) {
   //boton enviar//
   sendButton.addEventListener("click", ()=>{
     addUserMessage()
-    userInput.value = ""
     addResponse()
+    userInput.value = ""
   })
 
-  //tecla enter//
-  userInput.addEventListener("keydown", (event)=>{
-    if(event.key === "Enter")
-      addUserMessage();
-    addResponse();
+  // //tecla enter//
+  // userInput.addEventListener("keydown", (event)=>{
+  //   if(event.key === "Enter")
+  //     addUserMessage();
+  //   addResponse();
 
-  })
+  // })
 
   //funfacts!//
   const funfact = mainContent.querySelector("#funFact")

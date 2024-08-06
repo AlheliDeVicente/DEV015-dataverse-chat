@@ -5,8 +5,7 @@
     align-items: flex-start;
     margin-top: 2%;
     margin-bottom: 2%;
-    overflow-y: auto;
-    max-height: 80%;
+    height: 80%;
 }
 
 .philosopher-info {
@@ -27,7 +26,7 @@
     border-radius: 50%;
 }
 
-.chat-container {
+.individual-chatContainer {
     display: flex;
     flex-flow: row wrap;
     padding: 1%;
@@ -68,6 +67,7 @@
 .chat-main{
     display: flex;
     flex-flow: column;
+    width: 100%;
 }
 .chat-messages {
     display: flex;
@@ -127,6 +127,7 @@
     padding: 5px;
     border-top: 2px solid #6C7C79;
     align-items: center;
+    width: 100%;
 }
 
 .chat-input input {
@@ -136,7 +137,7 @@
     justify-self: flex-start;
     background-color: #CCC2DC;
     height: 20px;
-    width: 100%
+    width: 100%;
 }
 
 .chat-input button {
@@ -190,7 +191,7 @@
       font-size: small;
     }
   
-    .chat-container {
+    .individual-chatContainer {
       width: 80%;
       max-height: 80vh;
     }
@@ -224,4 +225,8 @@
       font-size: large;
   
     }
+    .chat-input {
+        width: 90%;
+    }
+    
 }
