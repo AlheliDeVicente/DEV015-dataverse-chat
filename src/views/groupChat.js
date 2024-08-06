@@ -55,35 +55,35 @@ export function groupChat() {
     messageContainers.appendChild(newUserMessage);
   }
   
-  // async function addGroupResponses() {
-  //   try {
-  //     // Obtener las respuestas de todos los filósofos
-  //     const promises = data.map(async (philosopher) => {
-  //       return communicateWithOpenAi(userInput.value, philosopher);
-  //     });
+  async function addGroupResponses() {
+    try {
+      // Obtener las respuestas de todos los filósofos
+      const promises = data.map(async (philosopher) => {
+        return communicateWithOpenAi(userInput.value, philosopher);
+      });
   
-  //     // Esperar todas las respuestas
-  //     const responses = await Promise.all(promises);
+      // Esperar todas las respuestas
+      const responses = await Promise.all(promises);
   
-  //     // Mostrar las respuestas en el chat
-  //     responses.forEach((response, index) => {
-  //       const philosopher = data[index];  
-  //       const openAiText = response.choices[0].message.content;
-  //       const newResponse = document.createElement("div");
-  //       newResponse.setAttribute("class", "message-received");
-  //       newResponse.innerHTML = `
-  //         <img src="${philosopher.imageUrl}" alt="${philosopher.name}"/>
-  //         <p class="text-received">${openAiText}</p>`;
-  //       messageContainers.appendChild(newResponse);
-  //     });
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //     const errorMessage = document.createElement("div");
-  //     errorMessage.setAttribute("class", "message-received");
-  //     errorMessage.textContent = "Hubo un error, por favor intenta de nuevo.";
-  //     messageContainers.appendChild(errorMessage);
-  //   }
-  // }
+      // Mostrar las respuestas en el chat
+      responses.forEach((response, index) => {
+        const philosopher = data[index];  
+        const openAiText = response.choices[0].message.content;
+        const newResponse = document.createElement("div");
+        newResponse.setAttribute("class", "message-received");
+        newResponse.innerHTML = `
+          <img src="${philosopher.imageUrl}" alt="${philosopher.name}"/>
+          <p class="text-received">${openAiText}</p>`;
+        messageContainers.appendChild(newResponse);
+      });
+    } catch (error) {
+      console.error("Error:", error);
+      const errorMessage = document.createElement("div");
+      errorMessage.setAttribute("class", "message-received");
+      errorMessage.textContent = "Hubo un error, por favor intenta de nuevo.";
+      messageContainers.appendChild(errorMessage);
+    }
+  }
   
   
   
