@@ -92,7 +92,7 @@ Con base en las Historias de usuario anteriormente descritas se crearon dos prot
 ## 5. Tests Desarrollados:
 - __Data Functions__: Para asegurar el correcto funcionamiento del filtrado, ordenado y cálculo estadísticas se desarrollaron test usando el framework `jest` que cubrieran al menos el 70% de las funciones.
 - __apikey__: Para asegurarse que la función de apikey estaba corriendo correctamente, se generaron tests de las mismas, con una mockup apikey
-__router__: Con un mock de las rutas, se genero un archivo llamado router.spec que permitiera saber si las funciones del router estaban cumpliendo su función y generaban la vista adecuada, así como que al momento de navegar nos llevaran al pathname y props correctos
-__componentes__: se intentó que cada uno de los componentes tuviera su propio test para asegurar que las funciones dentro de estos y la generación dinámica de sus documentos se diera de manera correcta.
+- __router__: Con un mock de las rutas, se genero un archivo llamado router.spec que permitiera saber si las funciones del router estaban cumpliendo su función y generaban la vista adecuada, así como que al momento de navegar nos llevaran al pathname y props correctos
+- __componentes__: se intentó que cada uno de los componentes tuviera su propio test para asegurar que las funciones dentro de estos y la generación dinámica de sus documentos se diera de manera correcta.
 
 Coded by Alhelí De Vicente García❤️
