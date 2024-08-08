@@ -48,7 +48,7 @@ __Funcionalidades de Chat Individual__:
 - __Tarjeta__: En la vista de Chat individual (para la versión escritorio), se cuenta con una tarjeta de información al lado izquierdo de la pantalla, la cual alberga nombre, una descripción más detalladas y las corrientes, áreas de investigación y obras más importantes del filósfox señaladx.
 - __Chat__: La página cuenta con un chat individual, a su vez enlazado con una API de OpenAI que permita a las usuarias enviar preguntas a su filosofx preferido!. El chat almacena los mensajes de ambas partes, asi como ofrece un pequeño header en donde se indica que el personaje está en líne!.
 
-## 2.4 Chat Grupal
+### 2.4 Chat Grupal
 Si así lo desean, las usuarias pueden también charlar con todos lxs filósofxs a la vez! La vista de chat grupal permite que una misma duda sea respondida por 24 de las voces más importantes en la historia de la filosofía.
 
 __Funcionalidades de Chat Grupal__
@@ -56,7 +56,7 @@ __Funcionalidades de Chat Grupal__
 - __Contenedor__: Al lado derecho de la pantalla (en la versión de escritorio) las usuarias se encontrarán con un contenedor que enliste a todos lxs filósofxs que están participando!
 - __Chat__: Al lado izquierdo, está el contenedor del chat grupal, enlazado con una API de OpenAI que permite a las usuarias enviar preguntas a todo el panel de expertos!
 
-## 2.5 Vista de Error.
+### 2.5 Vista de Error.
 En caso de que el usuario quiera acceder a una vista que no exista, la página les redirecciona a la página de error, desde la cual, tal como sísifo, podrán regresar al incio para poder volver emprender su aventura filosófica!
 
 ## 3. Historias de Usuario
@@ -85,11 +85,11 @@ Debe haber una imagen representativa de cada filósofx.
 - **Card**: Como usuaria, quiero que la página sea responsive y se pueda visualizar en distintas pantallas, para así aprovecharla al máximo y aprender de filosofía en todo momento!
 - **Criteria**: Asegurar el uso de mediaqueries para que las usuarias tengan una experiencia cómoda al momento de visitar la página desde computadoras, tablets o laptops.
 
-## 4. Diseños y prototipos:
+## 4. Diseños y prototipos 🖼️ :
 Con base en las Historias de usuario anteriormente descritas se crearon dos prototipos de alta fidelidad, los cuales sirvieron como guía para la creación de la página web, aunque se realizaron algunas modificaciones sobre estos al momento de realizar el diseño final, principalmente en la cuestión de colores. No obstante, el acomodo de los elementos y visualización de datos siguio esta estructura.
 ![prompt](src/assets/desktop.png) ![prompt](src/assets/mobile.png)
 
-## 5. 🖼️ Tests Desarrollados:
+## 5. Tests Desarrollados:
 - __Data Functions__: Para asegurar el correcto funcionamiento del filtrado, ordenado y cálculo estadísticas se desarrollaron test usando el framework `jest` que cubrieran al menos el 70% de las funciones.
 - __apikey__: Para asegurarse que la función de apikey estaba corriendo correctamente, se generaron tests de las mismas, con una mockup apikey
 __router__: Con un mock de las rutas, se genero un archivo llamado router.spec que permitiera saber si las funciones del router estaban cumpliendo su función y generaban la vista adecuada, así como que al momento de navegar nos llevaran al pathname y props correctos
