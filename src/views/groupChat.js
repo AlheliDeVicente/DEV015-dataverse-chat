@@ -76,10 +76,11 @@ export function groupChat() {
         console.error("Error:", error);
         const errorMessage = document.createElement("div");
         errorMessage.setAttribute("class", "message-received");
-        errorMessage.textContent = "Hubo un error, por favor intenta de nuevo.";
+        errorMessage.textContent = "Hubo un error";
         messageContainers.appendChild(errorMessage);
       });
   }
+
   
   // Event listener para enviar mensaje
   sendButton.addEventListener("click", () => {

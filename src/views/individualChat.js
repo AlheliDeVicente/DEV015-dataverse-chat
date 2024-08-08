@@ -67,8 +67,8 @@ export function individualChat(props) {
   function addResponse() {
     const userInputText = userInput.value
     communicateWithOpenAi(userInputText, selectedPhilosopher)
-      .then((data)=>{
-        const openAiText = data.choices[0].message.content
+      .then((response)=>{
+        const openAiText = response.choices[0].message.content
         const newResponse = document.createElement("div");
         newResponse.setAttribute("class", "message-received");
         newResponse.innerHTML = `
