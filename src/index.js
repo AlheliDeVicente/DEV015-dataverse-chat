@@ -8,10 +8,11 @@ import { ERROR } from "./views/error.js";
 
 export const routes = {
   "/": HOME,
-  "/chatGrupal": groupChat,
   "/individualChat": individualChat,
   "/apiKey": APIKEY,
-  "/error": ERROR
+  "/error": ERROR,
+  "/chatGrupal": groupChat
+  
 }
 
 setRoutes(routes);
