@@ -64,26 +64,23 @@ export function individualChat(props) {
     return messageContainers.appendChild(newUserMessage)
   }
   //respuesta de openAI//
-  async function addResponse() {
-    try {
-      const response = await communicateWithOpenAi(userInput.value, selectedPhilosopher);
-      const openAiText = response.choices[0].message.content;
-      const newResponse = document.createElement("div");
-      newResponse.setAttribute("class", "message-received");
-      newResponse.innerHTML = `
+  function addResponse() {
+    const userInputText = userInput.value
+    communicateWithOpenAi(userInputText, selectedPhilosopher)
+      .then((data)=>{
+        const openAiText = data.choices[0].message.content
+        const newResponse = document.createElement("div");
+        newResponse.setAttribute("class", "message-received");
+        newResponse.innerHTML = `
         <img src="${selectedPhilosopher.imageUrl}" alt="${selectedPhilosopher.name}"/>
         <p class="text-received">${openAiText}</p>`;
-      messageContainers.appendChild(newResponse);
-    } catch (error) {
-      console.error("Error:", error);
-      const errorMessage = document.createElement("div");
-      errorMessage.setAttribute("class", "message-received");
-      errorMessage.textContent = "Hubo un error, por favor intenta de nuevo.";
-      messageContainers.appendChild(errorMessage);
-    }
+        messageContainers.appendChild(newResponse);
+      })
+      .catch((error)=>{
+        console.error(error)
+      })
   }
-  
-  
+
   //boton enviar//
   sendButton.addEventListener("click", ()=>{
     addUserMessage()
@@ -91,13 +88,13 @@ export function individualChat(props) {
     userInput.value = ""
   })
 
-  // //tecla enter//
-  // userInput.addEventListener("keydown", (event)=>{
-  //   if(event.key === "Enter")
-  //     addUserMessage();
-  //   addResponse();
-
-  // })
+  //tecla enter//
+  userInput.addEventListener("keydown", (event)=>{
+    if(event.key === "Enter"){
+      addUserMessage();
+      addResponse()
+      userInput.value = ""}
+  })
 
   //funfacts!//
   const funfact = mainContent.querySelector("#funFact")
