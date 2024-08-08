@@ -33,60 +33,55 @@ __Funcionalidades de Home__:
 ### 2.2 Vista ApiKey
 La vista ApiKey se creó para que las usuarias puedan configurar desde aquí la clave que permitirá el funcionamiento del resto de las vistas.
 __Funcionalidades de ApiKey__:
-__Configuración del apikey__: Esta vista cuenta con un Input Text y dos botones que permiten el guardado y borrado de la apikey que hará posible la interacción con la inteligencia artificail en los chats individuales y el grupal.
-__Botones__: Botón de borrado y guardado de la apikey, ambos responden a las funciones setItem y removeItem.
+- __Configuración del apikey__: Esta vista cuenta con un Input Text y dos botones que permiten el guardado y borrado de la apikey que hará posible la interacción con la inteligencia artificail en los chats individuales y el grupal.
+- __Botones__: Botón de borrado y guardado de la apikey, ambos responden a las funciones setItem y removeItem.
 
 ### 2.3 Chat Individual:
 Una vez haciendo click a alguna de las tarjetas del filosofx que más les interesen, las usuarias serán dirigidas a la vista chatIndividual, en donde conocerán más del personaje e incluso podrán interactuar con ellx. 
-__Funcionalidades de Chat Individual__:
-__Tarjeta__: En la vista de Chat individual (para la versión escritorio), se cuenta con una tarjeta de información al lado izquierdo de la pantalla, la cual alberga nombre, una descripción más detalladas y las corrientes, áreas de investigación y obras más importantes del filósfox señaladx.
-__Chat__: La página cuenta con un chat individual, a su vez enlazado con una API de OpenAI que permita a las usuarias enviar preguntas a su filosofx preferido!. El chat almacena los mensajes de ambas partes, asi como ofrece un pequeño header en donde se indica que el personaje está en líne!.
+- __Funcionalidades de Chat Individual__:
+- __Tarjeta__: En la vista de Chat individual (para la versión escritorio), se cuenta con una tarjeta de información al lado izquierdo de la pantalla, la cual alberga nombre, una descripción más detalladas y las corrientes, áreas de investigación y obras más importantes del filósfox señaladx.
+- __Chat__: La página cuenta con un chat individual, a su vez enlazado con una API de OpenAI que permita a las usuarias enviar preguntas a su filosofx preferido!. El chat almacena los mensajes de ambas partes, asi como ofrece un pequeño header en donde se indica que el personaje está en líne!.
 
 ## 2.4 Chat Grupal
 Si así lo desean, las usuarias pueden también charlar con todos lxs filósofxs a la vez! La vista de chat grupal permite que una misma duda sea respondida por 24 de las voces más importantes en la historia de la filosofía.
 __Funcionalidades de Chat Grupal__
-__Contenedor__: Al lado derecho de la pantalla (en la versión de escritorio) las usuarias se encontrarán con un contenedor que enliste a todos lxs filósofxs que están participando!
-__Chat__: Al lado izquierdo, está el contenedor del chat grupal, enlazado con una API de OpenAI que permite a las usuarias enviar preguntas a todo el panel de expertos!
+- __Contenedor__: Al lado derecho de la pantalla (en la versión de escritorio) las usuarias se encontrarán con un contenedor que enliste a todos lxs filósofxs que están participando!
+- __Chat__: Al lado izquierdo, está el contenedor del chat grupal, enlazado con una API de OpenAI que permite a las usuarias enviar preguntas a todo el panel de expertos!
 
 ## 2.5 Vista de Error.
 En caso de que el usuario quiera acceder a una vista que no exista, la página les redirecciona a la página de error, desde la cual, tal como sísifo, podrán regresar al incio para poder volver emprender su aventura filosófica!
 
-## 3. Prompting:
-La generación de los datos se realizo mediante la herramienta de Inteligencia Artifical `ChatGPT`de OpenAI. Mediante un prompt específico se le pidio que generara un array de 24 objetos con los `KeyElements`: id, shortDescription, description, facts, name, entre otros.
-A continuación se deja el prompt utilizado:
-![prompt](src/assets/prompt1.png) ![prompt](src/assets/prompt.png)
-
-## 4. Historias de Usuario:
+## 3. Historias de Usuario
 Se crearon diversas historias de usuario para el diseño y programación de la página.
 
-**Card:** Como persona que tiene un primer acercamiento en la filosofia quiero saber el nombre de algunos de los filosofos mas importantes de la historia, para familiarizarme con ellos.
-**Criteria:** La página debe mostrar una lista de al menos 24 filósofos reconocidos.
+ **Card:** Como persona que tiene un primer acercamiento en la filosofia quiero saber el nombre de algunos de los filosofxs mas importantes de la historia, para familiarizarme con ellos.
+- **Criteria:** La página debe mostrar una lista de al menos 24 filósofos reconocidos.
 Cada filósofo debe estar acompañado de una breve biografía.
-Debe haber una imagen representativa de cada filósofo.
+Debe haber una imagen representativa de cada filósofx.
 
-**Card:** Como estudiante, quiero saber algunos de los trabajos más importantes de esos filósofos, para poder buscarlos después.
-**Criteria**Se deben enumerar al menos tres obras importantes de cada filosofo
-Cada obra debe tener al menos el año en que se creó, el título y el tema tratado en ella.
--Opcional (poder poner links a esas obras/pdfs)
+- **Card:** Como estudiante, quiero saber qué filosofox trabajaron temas relacionados a x rama, tradición o corriente
+- **Criteria:** La información de los filosofxs debe tener las ramas, corrientes y tradiciones a las que pertenecen y debe haber una función de filtrado que permita decantar dicha información
 
-**Card:** Como estudiante, quiero saber qué filosofos trabajaron temas relacionados a x rama, pues necesito hacer una investigación sobre ese tema
-**Criteria:** -La información de los filosofos debe tener las ramas a las que se dedicaron.
--Debe haber un botón de filtrado que permita filtrar por rama de la filosofia y muestre todos los filosofos que se dedicaron a ello.
+- **Card:** Como usuaria, quisiera obtener más información de un filosofx en especifico de aquella que me es mostrada en la tarjeta principal.
+- **Criteria:** Debe haber una tarjeta por cada filósofx que contenga la descripción larga, para que así las usuarias tengan más contexto del personaje.
 
-**Card:** Como estudiante, quiero saber qué filosofos pertenecieron a x corriente, pues estoy interesandome en saber más sobre ésta
-**Criteria:** Función de filtrado que permita conocer qué filosofos se dedicaron a x corriente
-La información de los filosofos debe destacar esta información
+- **Card:** Como alguien apasionado de la filosofía, me gustaría encontrar una manera de interactuar con estos filosofxs para que así me resuelvan dudas que tengo sobre sus obras o diversos temas.
+- **Criteria:** Debe existir una funcionalidad de chat que permita a usuarias tener un acercamiento con cada filosofx y que éstos respondan de manera adecuada, adoptando no sólo la información de cada uno de los personajes, sino también su actitud.
 
-**Card:** Como profesional de la filosofia quiero saber cuántos filosofos son de la rama continental, pues quiero conocer más sobre esa corriente 
-Como usuaria primeriza, quiero saber cuántas mujeres filosofas hay y cuáles fueron sus principales intereses
-**Criteria:** Funciones de calculo que permitan saber más sobre esta información y que muestre gráficas.
+- **Card:** Como alguien apasionado de la filosofía, me gustaría saber las opiniones que cada uno de lxs filosofxs tiene sobre un determinado tema, para así contrastarlas y saber cuál me llama más la atención.
+- **Criteria:** Debe existir una funcionalidad de chat grupal que permita que todxs lxs filosofxs responda a una pregunta en concreto en tiempo real, respetando la personalidad e información de cada unx de ellxs.
 
-**Card:** Como usuaria de la página, quiero que los filtros se encuentren en una sección donde sea facil distinguirlos y en donde no tomen demasiado espacio para no hacer mucho scroll
-**Criteria:** Realizar un menu lateral desplegable en donde se almacenen los filtros
+- **Card:** Como usuaria, quisiera que existiera una forma de configurar mi propia apikey de openai
+- **Criteria:** Debe existir una vista dedicada al manejo de la openai, para que las usuarias puedan ahí poner la información y borrarla cuando lo consideren necesario. 
 
-## 5. 🖼️ Prototipos de alta fidelidad:
+- **Card**: Como usuaria, quiero que la página sea responsive y se pueda visualizar en distintas pantallas, para así aprovecharla al máximo y aprender de filosofía en todo momento!
+- **Criteria**: Asegurar el uso de mediaqueries para que las usuarias tengan una experiencia cómoda al momento de visitar la página desde computadoras, tablets o laptops.
+
+## 4. Historias de Usuario:
 Con base en las Historias de usuario anteriormente descritas se crearon dos prototipos de alta fidelidad, los cuales sirvieron como guía para la creación de la página web, aunque se realizaron algunas modificaciones sobre estos al momento de realizar el diseño final, principalmente en la cuestión de colores. No obstante, el acomodo de los elementos y visualización de datos siguio esta estructura.
-![desktop](src/assets/desktop.png) ![mobile](src/assets/mobile.png)
+
+
+## 5. 🖼️ Tests Desarrollados:
+- __Data Functions__: Para asegurar el correcto funcionamiento del filtrado, ordenado y cálculo estadísticas se desarrollaron test usando el framework `jest` que cubrieran al menos el 70% de las funciones.
 
 Coded by Alhelí De Vicente García❤️
-- __Test Unitarios__: Para asegurar el correcto funcionamiento del filtrado, ordenado y cálculo estadísticas se desarrollaron test usando el framework `jest` que cubrieran al menos el 70% de las funciones.
