@@ -66,8 +66,7 @@ export function groupChat() {
       const responses = await Promise.all(promises);
   
       // Mostrar las respuestas en el chat
-      responses.forEach((response, index) => {
-        const philosopher = data[index];  
+      responses.forEach((response, philosopher) => {
         const openAiText = response.choices[0].message.content;
         const newResponse = document.createElement("div");
         newResponse.setAttribute("class", "message-received");
