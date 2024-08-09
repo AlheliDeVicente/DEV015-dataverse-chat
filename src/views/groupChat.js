@@ -26,11 +26,11 @@ export function groupChat() {
         </div>
       </div>`;
 
-  // Crear la lista de filósofos
+  // Crear el contenedor lateral en donde estarán las imágenes y el nombre//
   const philosophersList = document.createElement("div");
   philosophersList.setAttribute("class", "side-container");
   philosophersList.innerHTML = "<h4>En este chat:</h4>";
-
+  // por cada filosofo crear una minicard//
   data.forEach((philosopher) => {
     const littleCard = document.createElement("li");
     littleCard.setAttribute("class", "info-individual");
@@ -38,11 +38,11 @@ export function groupChat() {
         <img src="${philosopher.imageUrl}" alt="${philosopher.name}" class="each-image"/>
         <p class="philosopherName">${philosopher.name}</p>
       </div>`;
-    philosophersList.appendChild(littleCard);
+    philosophersList.appendChild(littleCard); //meter cada card al contenedor lateral//
   });
-  mainContent.appendChild(philosophersList);
+  mainContent.appendChild(philosophersList); //meter contenedor lateral al main//
 
-  const messageContainers = mainContent.querySelector(".groupChat-messages");
+  const messageContainers = mainContent.querySelector(".groupChat-messages"); 
   const sendButton = mainContent.querySelector(".send-Groupmessage");
   const userInput = mainContent.querySelector("#user-input");
 
@@ -56,13 +56,13 @@ export function groupChat() {
   }
   
   function addGroupResponses() {
-    // Obtener las promesas de todas las respuestas de los filósofos
+    // A cada filósofo de la lista se le llama la función communicateopenai y se obtiene un array de todas esas promesas//
     const promises = data.map(philosopher => 
       communicateWithOpenAi(userInput.value, philosopher)
     );
-    Promise.all(promises)
-      .then(responses => {
-        responses.forEach((response, philosopher) => {
+    Promise.all(promises) //promesa que se resuelve cuando todas las promesas del array se cumplen//
+      .then(responses => { //qué hacer//
+        responses.forEach((response, philosopher) => { //a cada uno de las respuestas del array, se le saca el contenido y se crea el contenedor en donde se van a insertar//
           const openAiText = response.choices[0].message.content;
           const newResponse = document.createElement("div");
           newResponse.setAttribute("class", "message-received");
@@ -84,8 +84,6 @@ export function groupChat() {
   
   // Event listener para enviar mensaje
   sendButton.addEventListener("click", () => {
-    const userMessage = userInput.value;
-    if (userMessage.trim() === "") return; // No enviar mensajes vacíos
     addUserMessage();
     addGroupResponses()
     userInput.value = "";
@@ -94,6 +92,7 @@ export function groupChat() {
   userInput.addEventListener("keydown", (event)=>{
     if(event.key === "Enter"){
       addUserMessage();
+      addGroupResponses()
       userInput.value = ""}
   })
 
