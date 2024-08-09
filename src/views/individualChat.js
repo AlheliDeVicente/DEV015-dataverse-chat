@@ -8,7 +8,7 @@ export function individualChat(props) {
   //traer componentes//
   const headerElement = header()
   const footerElement = footer()
-  //para que sirva la vista individual y se pongan bien los props//
+  //se renderiza la vista tarjeta individual, para esto se trae el objeto que recibe props y se obtiene el id de éste, recuerda que la estructura de props es algo como {id:""}. A la función se le dice que renderice la vista de aquél filósofo cuyo ID coincida con el ID del objeto que se le pasó a props//
   const selectedPhilosopher = data.find(philosopher => philosopher.id === props.id)
   //para poder cambiar la imagen de fondo//
   const bodyIndividual = document.querySelector("body")
@@ -66,9 +66,9 @@ export function individualChat(props) {
   //respuesta de openAI//
   function addResponse() {
     const userInputText = userInput.value
-    communicateWithOpenAi(userInputText, selectedPhilosopher)
-      .then((response)=>{
-        const openAiText = response.choices[0].message.content
+    communicateWithOpenAi(userInputText, selectedPhilosopher) //se llama a la función communicateWithOpenAi y se le pasan sus argumentos indicados//
+      .then((response)=>{ //.then porque es una promesa aun//
+        const openAiText = response.choices[0].message.content //del objeto que sea response, acceder a la propiedad choices, luego a mensajes, luego a contenido//
         const newResponse = document.createElement("div");
         newResponse.setAttribute("class", "message-received");
         newResponse.innerHTML = `
@@ -76,16 +76,16 @@ export function individualChat(props) {
         <p class="text-received">${openAiText}</p>`;
         messageContainers.appendChild(newResponse);
       })
-      .catch((error)=>{
+      .catch((error)=>{ //cuando hay un error//
         console.error(error)
       })
   }
 
   //boton enviar//
   sendButton.addEventListener("click", ()=>{
-    addUserMessage()
-    addResponse()
-    userInput.value = ""
+    addUserMessage() //añade mensaje usuario//
+    addResponse() //añade mensaje respuesta//
+    userInput.value = "" //limpia imput//
   })
 
   //tecla enter//

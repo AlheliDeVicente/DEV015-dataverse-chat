@@ -1,0 +1,23 @@
+module.exports = {
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true,
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "extends": "eslint:recommended",
+  "plugins": ["import"],
+  "rules": {
+    "no-console": "warn",
+    "import/extensions": 0,
+    "no-var": "error",
+    "prefer-const": "error",
+    "eqeqeq": "error",
+    "indent": ["error", 2],
+    "import/no-cycle": ["error", { "maxDepth": 1 }]
+  }
+}

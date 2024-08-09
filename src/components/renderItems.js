@@ -32,11 +32,14 @@ export const renderItems = (data) => {
     //agregar tarjeta al ul//
     ul.appendChild(card);
   });
+  //función para el click de cada tarjeta//
   const addCardListeners = () => {
     const cards = ul.querySelectorAll(".philosophersCard");
     cards.forEach((card) => {
       card.addEventListener("click", () => {
+        //obtener el id de cada uno de los filósofos y se guarda en constante, la cual es un objeto con estructura {id:""}//
         const cardID = card.getAttribute("data-id");
+        //se pasa esa constante como ARGUMENTO para la función de renderview!!//
         navigateTo("/individualChat", { id: cardID });
       });
     });
